@@ -17,43 +17,64 @@
                                 classes: [
                                     {
                                         name: "Algebra liniowa",
-                                        lecturer: "dr Anna Zamojska-Dzienio",
+                                        lecturer: {
+                                            name: "Anna Zamojska-Dzienio",
+                                            title: "dr",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Analiza i równania różniczkowe 1",
-                                        lecturer: "dr Ewa Stróżyna",
+                                        lecturer: {
+                                            name: "Ewa Stróżyna",
+                                            title: "dr",
+                                        },
                                         grade: 4.5,
                                         weight: 4
                                     },
                                     {
                                         name: "Logika i teoria mnogości",
-                                        lecturer: "dr inż. Żaneta Trębska",
+                                        lecturer: {
+                                            name: "Żaneta Trębska",
+                                            title: "dr inż.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Podstawy programowania",
-                                        lecturer: "dr inż. Henryk Dobrowolski",
+                                        lecturer: {
+                                            name: "Henryk Dobrowolski",
+                                            title: "dr inż.",
+                                        },
                                         grade: 5,
                                         weight: 5
                                     },
                                     {
                                         name: "Wstęp do informatyki",
-                                        lecturer: "dr inż. Wiktor Daszczuk",
+                                        lecturer: {
+                                            name: "Wiktor Daszczuk",
+                                            title: "dr inż.",
+                                        },
                                         grade: 4.5,
                                         weight: 4
                                     },
                                     {
                                         name: "Podstawy prawa - ochrona własności intelektualnej",
-                                        lecturer: "dr Agnieszka Woźniak",
+                                        lecturer: {
+                                            name: "Agnieszka Woźniak",
+                                            title: "dr",
+                                        },
                                         grade: 4.5,
                                         weight: 2
                                     },
                                     {
                                         name: "Język angielski egzamin B2",
-                                        lecturer: "mgr Małgorzata Witczak",
+                                        lecturer: {
+                                            name: "Małgorzata Witczak",
+                                            title: "mgr",
+                                        },
                                         grade: 5,
                                         weight: 0
                                     },
@@ -64,55 +85,82 @@
                                 classes: [
                                     {
                                         name: "Analiza i równania rózniczkowe 2",
-                                        lecturer: "dr Ewa Stróżyna",
+                                        lecturer: {
+                                            name: "Ewa Stróżyna",
+                                            title: "dr",
+                                        },
                                         grade: 5,
                                         weight: 3
                                     },
                                     {
                                         name: "Matematyka dyskretna",
-                                        lecturer: "dr Paweł Naroski",
+                                        lecturer: {
+                                            name: "Paweł Naroski",
+                                            title: "dr",
+                                        },
                                         grade: 5,
                                         weight: 3
                                     },
                                     {
                                         name: "Programowanie obiektowe",
-                                        lecturer: "dr inż. Andrzej Pająk",
+                                        lecturer: {
+                                            name: "Andrzej Pająk",
+                                            title: "dr inż.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Programowanie zdarzeniowe",
-                                        lecturer: "doc. dr inż. Roman Podraza",
+                                        lecturer: {
+                                            name: "Roman Podraza",
+                                            title: "doc. dr inż.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Podstawy technologii cyfrowej",
-                                        lecturer: "dr inż. Andrzej Skorupski",
+                                        lecturer: {
+                                            name: "Andrzej Skorupski",
+                                            title: "dr inż.",
+                                        },
                                         grade: 4.5,
                                         weight: 4
                                     },
                                     {
                                         name: "Podstawy elektroniki",
-                                        lecturer: "prof. nzw. dr hab. Marek Nałęcz",
+                                        lecturer: {
+                                            name: "Marek Nałęcz",
+                                            title: "prof. nzw. dr hab.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Język angielski poziom B2",
-                                        lecturer: "mgr Małgorzata Witczak",
+                                        lecturer: {
+                                            name: "Małgorzata Witczak",
+                                            title: "mgr",
+                                        },
                                         grade: 5,
                                         weight: 2
                                     },
                                     {
                                         name: "Język angielski poziom C1",
-                                        lecturer: "mgr Anna Krysińska",
+                                        lecturer: {
+                                            name: "Anna Krysińska",
+                                            title: "mgr",
+                                        },
                                         grade: 5,
                                         weight: 2
                                     },
                                     {
                                         name: "Fizyka ogólna",
-                                        lecturer: "dr hab. Andrzej Krawiecki",
+                                        lecturer: {
+                                            name: "Andrzej Krawiecki",
+                                            title: "dr hab.",
+                                        },
                                         grade: 3.5,
                                         weight: 4
                                     },
@@ -124,49 +172,73 @@
                                 classes: [
                                     {
                                         name: "Algorytmy i struktury danych",
-                                        lecturer: "doc. dr inż. Roman Podraza",
+                                        lecturer: {
+                                            name: "Roman Podraza",
+                                            title: "doc. dr inż.",
+                                        },
                                         grade: 4.5,
                                         weight: 4
                                     },
                                     {
                                         name: "Bazy danych",
-                                        lecturer: "dr inż. Andrzej Ciemski",
+                                        lecturer: {
+                                            name: "Andrzej Ciemski",
+                                            title: "dr inż.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Systemy operacyjne",
-                                        lecturer: "dr inż. Tomasz Jordan Kruk",
+                                        lecturer: {
+                                            name: "Tomasz Jordan Kruk",
+                                            title: "dr inż.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Teoria sygnałów i informacji",
-                                        lecturer: "prof. dr hab. inż. Jerzy Szabatin",
+                                        lecturer: {
+                                            name: "Jerzy Szabatin",
+                                            title: "prof. dr hab. inż. ",
+                                        },
                                         grade: 4.5,
                                         weight: 3
                                     },
                                     {
                                         name: "Fizyczne podstawy przetwarzania informacji",
-                                        lecturer: "prof. dr hab. Jan Szmidt",
+                                        lecturer: {
+                                            name: "Jan Szmidt",
+                                            title: "prof. dr hab.",
+                                        },
                                         grade: 5,
                                         weight: 3
                                     },
                                     {
                                         name: "Metody probabilistyczne i statystyczne",
-                                        lecturer: "dr inż. Ewa Frankiewicz",
+                                        lecturer: {
+                                            name: "Ewa Frankiewicz",
+                                            title: "dr inż.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Język angielski poziom C1",
-                                        lecturer: "mgr. Małgorzata Wieczorek",
+                                        lecturer: {
+                                            name: "Małgorzata Wieczorek",
+                                            title: "mgr",
+                                        },
                                         grade: 5,
                                         weight: 2
                                     },
                                     {
                                         name: "Podstawy telekomunikacji",
-                                        lecturer: "mgr inż. Ewa Obarska",
+                                        lecturer: {
+                                            name: "Ewa Obarska",
+                                            title: "mgr inż.",
+                                        },
                                         grade: 5,
                                         weight: 3
                                     },
@@ -177,49 +249,73 @@
                                 classes: [
                                     {
                                         name: "Architektura komputerów",
-                                        lecturer: "dr inż. Dariusz Turlej",
+                                        lecturer: {
+                                            name: "Dariusz Turlej",
+                                            title: "dr inż.",
+                                        },
                                         grade: 4.5,
                                         weight: 4
                                     },
                                     {
                                         name: "Grafika Komputerowa",
-                                        lecturer: "prof. dr hab. Jan Zabrodzki",
+                                        lecturer: {
+                                            name: "Jan Zabrodzki",
+                                            title: "prof. dr hab.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Podstawy badań operacyjnych",
-                                        lecturer: "dr hab. inż. Krzysztof Pieńkosz",
+                                        lecturer: {
+                                            name: "Krzysztof Pieńkosz",
+                                            title: "dr hab. inż.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Podstawy automatyki",
-                                        lecturer: "prof. dr hab. Krzysztof Malinowski",
+                                        lecturer: {
+                                            name: "Krzysztof Malinowski",
+                                            title: "prof. dr hab.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Sieci komputerowe",
-                                        lecturer: "mgr inż. Jerzy Sobczyk",
+                                        lecturer: {
+                                            name: "Jerzy Sobczyk",
+                                            title: "mgr inż.",
+                                        },
                                         grade: 5,
                                         weight: 4
                                     },
                                     {
                                         name: "Kreowanie wizerunku firmy",
-                                        lecturer: "dr Tomasz Dusiewicz",
+                                        lecturer: {
+                                            name: "Tomasz Dusiewicz",
+                                            title: "dr",
+                                        },
                                         grade: 3,
                                         weight: 2
                                     },
                                     {
                                         name: "Język angielski poziom C1",
-                                        lecturer: "Brian Dunn",
+                                        lecturer: {
+                                            name: "Brian Dunn",
+                                            title: null,
+                                        },
                                         grade: 4.5,
                                         weight: 2
                                     },
                                     {
                                         name: "Filozofia polityki",
-                                        lecturer: "dr Jan Zubelewicz",
+                                        lecturer: {
+                                            name: "Jan Zubelewicz",
+                                            title: "dr",
+                                        },
                                         grade: 5,
                                         weight: 2
                                     },
@@ -286,8 +382,13 @@ module App.Services.Model {
 
     export class Classes {
         name: string;
-        lecturer: string;
+        lecturer: Model.Lecturer;
         grade: number;
         weight: number;
+    }
+
+    export class Lecturer {
+        name: string;
+        title: string;
     }
 }

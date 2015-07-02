@@ -6,6 +6,8 @@
 
         constructor($scope: Scopes.ISemestersAccordionScope) {
             $scope.extended = [];
+            $scope.filterOption = "None";
+            $scope.filterValue = "";
             for (var i = 0; i < $scope.school.semesters.length; ++i) {
                 $scope.extended.push(false);
             }
@@ -30,5 +32,7 @@ module App.Controllers.Scopes {
         extended: boolean[];
         collapseAll: () => void;
         extendAll: () => void;
+        filterOption: string;
+        filterValue: string;
     }
 }
