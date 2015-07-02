@@ -1,0 +1,19 @@
+﻿<h2>Education</h2>
+<tabset justified="false">
+    <tab ng-repeat="school in education.schools" heading="{{school.name}}">
+        <h6>
+            <span>{{school.startDate.toLocaleDateString()}} - </span>
+            <span ng-show="school.endDate">{{school.endDate.toLocaleDateString()}}</span>
+            <span ng-hide="school.endDate">present</span>
+        </h6>
+        <accordion close-others="false">
+            <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}">
+                <div ng-repeat="class in semester.classes" class="container">
+                    <div class="col-xs-5">{{class.name}}</div>
+                    <div class="col-xs-1">{{class.grade}}</div>
+                    <div class="col-xs-6">{{class.lecturer}}</div>
+                </div>
+            </accordion-group>
+        </accordion>
+    </tab>
+</tabset>
