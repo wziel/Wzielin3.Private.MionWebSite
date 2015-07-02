@@ -30,16 +30,6 @@
     <Content Include="Data\kitten7.jpg" />
     <Content Include="Data\kitten8.jpg" />
     <Content Include="index.html" />
-    <Content Include="Scripts\App\Config\app.js" />
-    <Content Include="Scripts\App\Controllers\About\about-controller.js" />
-    <Content Include="Scripts\App\Controllers\Education\education-controller.js" />
-    <Content Include="Scripts\App\Controllers\Index\index-controller.js" />
-    <Content Include="Scripts\App\Controllers\Main\main-controller.js" />
-    <Content Include="Scripts\App\Controllers\Project-Details\project-details-controller.js" />
-    <Content Include="Scripts\App\Controllers\Projects\projects-controller.js" />
-    <Content Include="Scripts\App\Services\Education\education-factory.js" />
-    <Content Include="Scripts\App\Services\Navigation\navigation-factory.js" />
-    <Content Include="Scripts\App\Services\Projects\projects-factory.js" />
     <Content Include="Scripts\External\angular-route\angular-route.js" />
     <Content Include="Scripts\External\angular-route\angular-route.min.js" />
     <Content Include="Scripts\External\angular-ui-bootstrap\ui-bootstrap-tpls.js" />
@@ -59,16 +49,6 @@
     <Content Include="Content\External\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\External\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\External\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Scripts\App\Config\app.js.map" />
-    <Content Include="Scripts\App\Controllers\About\about-controller.js.map" />
-    <Content Include="Scripts\App\Controllers\Education\education-controller.js.map" />
-    <Content Include="Scripts\App\Controllers\Index\index-controller.js.map" />
-    <Content Include="Scripts\App\Controllers\Main\main-controller.js.map" />
-    <Content Include="Scripts\App\Controllers\Project-Details\project-details-controller.js.map" />
-    <Content Include="Scripts\App\Controllers\Projects\projects-controller.js.map" />
-    <Content Include="Scripts\App\Services\Education\education-factory.js.map" />
-    <Content Include="Scripts\App\Services\Navigation\navigation-factory.js.map" />
-    <Content Include="Scripts\App\Services\Projects\projects-factory.js.map" />
     <Content Include="Scripts\External\angular-route\angular-route.min.js.map" />
     <Content Include="Scripts\External\angular\angular.min.js.map" />
     <None Include="web.Debug.config">
@@ -79,16 +59,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\App\Config\app.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\About\about-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\Education\education-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\Index\index-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\Main\main-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\Project-Details\project-details-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\Projects\projects-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Services\Education\education-factory.ts" />
-    <TypeScriptCompile Include="Scripts\App\Services\Navigation\navigation-factory.ts" />
-    <TypeScriptCompile Include="Scripts\App\Services\Projects\projects-factory.ts" />
+    <TypeScriptCompile Include="Scripts\App\app.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\about-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\semesters-accordion-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\education-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\index-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\main-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\project-details-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\projects-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Services\education-factory.ts" />
+    <TypeScriptCompile Include="Scripts\App\Services\navigation-factory.ts" />
+    <TypeScriptCompile Include="Scripts\App\Services\projects-factory.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />

@@ -19,11 +19,7 @@
                 {
                     displayName: "About",
                     path: "/about"
-                },
-                {
-                    displayName: "Contact",
-                    path: "/contact"
-                },
+                }
             ]
         }
     }

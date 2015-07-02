@@ -7,6 +7,8 @@
                 schools: [
                     {
                         name: "Warsaw University of Technology",
+                        faculty: "Faculty of Electronicts and Information Technology",
+                        field: "Computer Science, Information Systems Engineering",
                         startDate: new Date(2013, 9),
                         endDate: null,
                         semesters: [
@@ -227,6 +229,8 @@
                     },
                     {
                         name: "Gimnazjum i Liceum Akademickie w Toruniu",
+                        faculty: null,
+                        field: "Mathematics and Informatics",
                         startDate: new Date(2007, 8),
                         endDate: new Date(2013, 4),
                         semesters: [
@@ -268,6 +272,8 @@ module App.Services.Model {
 
     export class School {
         name: string;
+        faculty: string;
+        field: string;
         startDate: Date;
         endDate: Date;
         semesters: Model.Semester[];
