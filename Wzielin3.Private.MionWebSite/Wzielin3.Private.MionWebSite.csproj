@@ -61,12 +61,13 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App\app.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\about-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\semesters-accordion-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\education-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\index-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\main-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\project-details-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\projects-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\semesters-accordion-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Directives\semesters-accordion-directive.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\education-factory.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\navigation-factory.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\projects-factory.ts" />

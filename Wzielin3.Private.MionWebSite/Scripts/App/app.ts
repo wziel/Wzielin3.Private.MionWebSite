@@ -22,6 +22,7 @@ module App {
             this.app.controller("ProjectDetailsController", ['$scope', '$routeParams', '$location', 'projects', ($scope, $routeParams, $location, projects) => new Controllers.ProjectDetailsController($scope, $routeParams, $location, projects)]);
             this.app.controller("ProjectsController", ["$scope", "projects", ($scope, projects) => new Controllers.ProjectsController($scope, projects)]);
             this.app.controller("EducationController", ["$scope", "education", ($scope, education) => new Controllers.EducationController($scope, education)]);
+            this.app.controller("SemestersAccordionController", ["$scope", ($scope) => new Controllers.SemestersAccordionController($scope)]);
             this.app.factory("education",() => new Services.EducationFactory());
             this.app.factory("projects",() => new Services.ProjectsFactory());
             this.app.factory("navigation",() => new Services.NavigationFactory());

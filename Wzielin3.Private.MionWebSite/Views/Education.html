@@ -11,16 +11,18 @@
                 <span ng-hide="school.endDate">present</span>
             </h5>
         </div>
-        <button type="button" class="btn btn-default" ng-click="extendAll()">Extend all</button>
-        <button type="button" class="btn btn-default" ng-click="collapseAll()">Collapse all</button>
-        <accordion close-others="false">
-            <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}">
-                <div ng-repeat="class in semester.classes" class="container">
-                    <div class="col-md-6 col-xs-10">{{class.name}}</div>
-                    <div class="col-md-1 col-xs-2">{{class.grade}}</div>
-                    <div class="col-md-5 hidden-sm hidden-xs">{{class.lecturer}}</div>
-                </div>
-            </accordion-group>
-        </accordion>
+        <div>
+            <button type="button" class="btn btn-default" ng-click="extendAll()">Extend all</button>
+            <button type="button" class="btn btn-default" ng-click="collapseAll()">Collapse all</button>
+            <accordion close-others="false">
+                <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}">
+                    <div ng-repeat="class in semester.classes" class="container">
+                        <div class="col-md-6 col-xs-10">{{class.name}}</div>
+                        <div class="col-md-1 col-xs-2">{{class.grade}}</div>
+                        <div class="col-md-5 hidden-sm hidden-xs">{{class.lecturer}}</div>
+                    </div>
+                </accordion-group>
+            </accordion>
+        </div>
     </tab>
 </tabset>
