@@ -1,6 +1,6 @@
-﻿<h2>Education</h2>
-<tabset justified="false">
-    <tab ng-repeat="school in education.schools" ng-click="setActiveSchool(school)" heading="{{school.name}}">
+﻿<h2 class="container">Education</h2>
+<tabset justified="false" class="container">
+    <tab ng-repeat="school in education.schools" heading="{{school.name}}">
         <div class="text-center">
             <h2>{{school.name}}</h2>
             <h4>{{school.faculty}}</h4>
@@ -11,11 +11,12 @@
                 <span ng-hide="school.endDate">present</span>
             </h5>
         </div>
-        <div>
+        <div ng-controller="SemestersAccordionController">
             <button type="button" class="btn btn-default" ng-click="extendAll()">Extend all</button>
             <button type="button" class="btn btn-default" ng-click="collapseAll()">Collapse all</button>
             <accordion close-others="false">
-                <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}">
+                <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}"
+                                 is-open="extended[$index]">
                     <div ng-repeat="class in semester.classes" class="container">
                         <div class="col-md-6 col-xs-10">{{class.name}}</div>
                         <div class="col-md-1 col-xs-2">{{class.grade}}</div>
