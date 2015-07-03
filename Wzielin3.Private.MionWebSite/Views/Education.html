@@ -1,5 +1,4 @@
-﻿<h2 class="container">Education</h2>
-<tabset justified="false" class="container">
+﻿<tabset justified="false" class="container">
     <tab ng-repeat="school in education.schools" heading="{{school.name}}">
         <div class="text-center">
             <h2>{{school.name}}</h2>
@@ -11,30 +10,23 @@
                 <span ng-hide="school.endDate">present</span>
             </h5>
         </div>
-        <div ng-controller="SemestersAccordionController">
-            <div class="container">
-                <span class="pull-right">
-                    <label>Filter by:</label>
-                    <div class="btn-group">
-                        <label class="btn btn-default" ng-model="filterOption" btn-radio="'None'">None</label>
-                        <label class="btn btn-default" ng-model="filterOption" btn-radio="'All'">All</label>
-                        <label class="btn btn-default" ng-model="filterOption" btn-radio="'Class'">Class</label>
-                        <label class="btn btn-default" ng-model="filterOption" btn-radio="'Lecturer'">Lecturer</label>
-                    </div>
-                    <input class="form-control" type="text" ng-model="filterValue" ng-disabled="filterOption == 'None'"/>
-                </span>
-                <span class="btn-group pull-left">
+        <div ng-controller="SemestersAccordionController" class="container-fluid">
+            <div class="row panel-heading">
+                <div class="col-md-3 pull-right">
                     <button type="button" class="btn btn-default" ng-click="extendAll()">Extend all</button>
                     <button type="button" class="btn btn-default" ng-click="collapseAll()">Collapse all</button>
-                </span>
+                </div>
+                <div class="col-md-4 pull-left">
+                    <input class="form-control" ng-model="filterValue" placeholder="Search" />
+                </div>
             </div>
-            <accordion close-others="false" >
+            <accordion close-others="false">
                 <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}"
-                                 is-open="extended[$index]">
-                    <div ng-repeat="class in semester.classes" class="container">
+                                 is-open="extended[$index]" class="row">
+                    <div ng-repeat="class in semester.classes | filter:filterValue" class="container">
                         <div class="col-md-6 col-xs-10">{{class.name}}</div>
                         <div class="col-md-1 col-xs-2">{{class.grade}}</div>
-                        <div class="col-md-5 hidden-sm hidden-xs">{{class.lecturer.title + " " + class.lecturer.name}}</div>
+                        <div class="col-md-5 hidden-sm hidden-xs">{{class.lecturer.title}} {{class.lecturer.name}}</div>
                     </div>
                 </accordion-group>
             </accordion>
