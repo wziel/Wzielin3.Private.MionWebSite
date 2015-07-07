@@ -2,7 +2,7 @@
     "use strict";
     export class ClassSummaryChartDirective implements ng.IDirective {
         public templateUrl = "../../../Views/ClassSummaryChart.html";
-        public restrict = "E";
+        public restrict = "AE";
         public scope = {
             classes: "="
         };

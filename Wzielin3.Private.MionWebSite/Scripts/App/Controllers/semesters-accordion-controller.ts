@@ -8,9 +8,6 @@
             $scope.extended = [];
             $scope.chartCollapsed = true;
             $scope.filterValue = "";
-            for (var i = 0; i < $scope.school.semesters.length; ++i) {
-                $scope.extended.push(true);
-            }
             $scope.collapseAll = function () {
                 for (var i = 0; i < $scope.school.semesters.length; ++i) {
                     $scope.extended[i] = false;
@@ -21,6 +18,19 @@
                     $scope.extended[i] = true;
                 }
             }
+
+            for (var i = 0; i < $scope.school.semesters.length; ++i) {
+                $scope.extended.push(true);
+            }
+
+            var classes: Services.Model.Classes[];
+            classes = [];
+            for (var i = 0; i < $scope.school.semesters.length; ++i) {
+                if ($scope.school.semesters[i].graded) {
+                    classes = classes.concat($scope.school.semesters[i].classes);
+                }
+            }
+            $scope.allClasses = classes;
         }
     }
 }
@@ -34,5 +44,6 @@ module App.Controllers.Scopes {
         extendAll: () => void;
         filterValue: string;
         chartCollapsed: boolean;
+        allClasses: Services.Model.Classes[];
     }
 }
