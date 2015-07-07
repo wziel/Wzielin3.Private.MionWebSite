@@ -1,8 +1,14 @@
 ﻿<div>
     <link href="../Content/External/angular-nvd3-directives/nv.d3.css" rel="stylesheet" />
-    <span>{{name}}</span>
-    <div ng-repeat="class in classes">{{class.name}}</div>
-    <script src="../Scripts/External/angular-nvd3-directives/angularjs-nvd3-directives.js" type="text/javascript"></script>
-    <script src="../Scripts/External/angular-nvd3-directives/d3.js" type="text/javascript"></script>
-    <script src="../Scripts/External/angular-nvd3-directives/nv.d3.js" type="text/javascript"></script>
+    <!--<div ng-repeat="class in classes">{{class.name}}</div>-->
+    <nvd3-discrete-bar-chart data="chartData.data"
+                             id="exampleId"
+                             width="800"
+                             height="400"
+                             tooltips="true"
+                             showxaxis="true"
+                             showyaxis="true"
+                             showvalues="true">
+        <svg></svg>
+    </nvd3-discrete-bar-chart>
 </div>
