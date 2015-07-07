@@ -26,6 +26,7 @@ module App {
             this.app.factory("education",() => new Services.EducationFactory());
             this.app.factory("projects",() => new Services.ProjectsFactory());
             this.app.factory("navigation",() => new Services.NavigationFactory());
+            this.app.directive('classSummary', Directives.ClassSummaryChartDirective.Factory());
         }
     }
 }
