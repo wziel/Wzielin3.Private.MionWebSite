@@ -1,7 +1,7 @@
 ﻿module App.Directives {
     "use strict";
     export class ClassSummaryChartDirective implements ng.IDirective {
-        public templateUrl = "../../../Views/ClassSummaryChart.html";
+        public templateUrl = "Views/ClassSummaryChart.html";
         public restrict = "AE";
         public scope = {
             classes: "="
