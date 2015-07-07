@@ -6,6 +6,7 @@
 
         constructor($scope: Scopes.ISemestersAccordionScope) {
             $scope.extended = [];
+            $scope.chartCollapsed = true;
             $scope.filterValue = "";
             for (var i = 0; i < $scope.school.semesters.length; ++i) {
                 $scope.extended.push(true);
@@ -32,5 +33,6 @@ module App.Controllers.Scopes {
         collapseAll: () => void;
         extendAll: () => void;
         filterValue: string;
+        chartCollapsed: boolean;
     }
 }

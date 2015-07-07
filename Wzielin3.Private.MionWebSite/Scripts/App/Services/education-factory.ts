@@ -13,6 +13,7 @@
                         endDate: null,
                         semesters: [
                             {
+                                graded: true,
                                 name: "1st Semester",
                                 classes: [
                                     {
@@ -81,6 +82,7 @@
                                 ]
                             },
                             {
+                                graded: true,
                                 name: "2nd Semester",
                                 classes: [
                                     {
@@ -168,6 +170,7 @@
                                 ]
                             },
                             {
+                                graded: true,
                                 name: "3rd Semester",
                                 classes: [
                                     {
@@ -245,6 +248,7 @@
                                 ]
                             },
                             {
+                                graded: true,
                                 name: "4th Semester",
                                 classes: [
                                     {
@@ -331,6 +335,7 @@
                         endDate: new Date(2013, 4),
                         semesters: [
                             {
+                                graded: false,
                                 name: "Matura results",
                                 classes: [
                                     {
@@ -378,6 +383,7 @@ module App.Services.Model {
     export class Semester {
         name: string;
         classes: Model.Classes[];
+        graded: boolean;
     }
 
     export class Classes {

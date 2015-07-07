@@ -16,6 +16,9 @@
                 values: []
             }];
             var values = [];
+            for (var i = 2; i <= 5; i += 0.5) {
+                    values[i] = 0;
+            }
             for (var i = 0; i < $scope.classes.length; ++i) {
                 var currentGrade = $scope.classes[i].grade;
                 if (values[currentGrade] === undefined) {
@@ -23,10 +26,8 @@
                 }
                 values[currentGrade]++;
             }
-            for (var property in values) {
-                if (values.hasOwnProperty(property)) {
-                    $scope.chartData.data[0].values.push([property, values[property]]);
-                }
+            for (var i = 2; i <= 5; i += 0.5) {
+                $scope.chartData.data[0].values.push([i, values[i]]);
             }
         }
 

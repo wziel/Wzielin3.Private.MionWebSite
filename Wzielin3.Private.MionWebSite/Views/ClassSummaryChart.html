@@ -1,11 +1,9 @@
 ﻿<div>
     <link href="../Content/External/angular-nvd3-directives/nv.d3.css" rel="stylesheet" />
-    <!--<div ng-repeat="class in classes">{{class.name}}</div>-->
     <nvd3-discrete-bar-chart data="chartData.data"
-                             id="exampleId"
+                             id="{{chartData.data.key}}"
                              width="800"
                              height="400"
-                             tooltips="true"
                              showxaxis="true"
                              showyaxis="true"
                              showvalues="true">
