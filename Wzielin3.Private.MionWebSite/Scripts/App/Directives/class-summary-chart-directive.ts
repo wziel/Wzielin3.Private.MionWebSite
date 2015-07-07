@@ -4,10 +4,12 @@
         public link: (scope: Scopes.IClassSummaryChartScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
         public templateUrl = "../../../Views/ClassSummaryChart.html";
         public restrict = "E";
-        public scope: {};
+        public scope: {
+            classes: string;
+        };
 
         constructor() {
-            this.scope = {};
+            this.scope = { classes: "=" };
             ClassSummaryChartDirective.prototype.link =
             (scope: Scopes.IClassSummaryChartScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
                 scope.name = "Aaron";
