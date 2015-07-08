@@ -8,7 +8,7 @@
         public restrict = "A";
         public link =
         (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
-            this.$animate.enabled(false, element);
+            this.$animate.enabled(element, false);
         };
         constructor($animate: ng.IAnimateService) {
             this.$animate = $animate;
