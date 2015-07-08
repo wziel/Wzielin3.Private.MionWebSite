@@ -9,16 +9,16 @@
             $location: ng.ILocationService,
             projects: Services.ProjectsFactory) {
 
-            var projectsList = projects.getAll();
             var id = parseInt($routeParams["id"]);
-            if (id < 0 || id >= projectsList.length) {
+            var project = projects.getById(id);
+            if (project === null) {
                 $location.path('#/home');
             }
             else {
-                $scope.project = projectsList[id];
+                $scope.project = project;
                 $scope.carousel = {
                     interval: 5000,
-                    slides: $scope.project.images.getAll()
+                    slides: project.images.getAll()
                 };
             }
         }

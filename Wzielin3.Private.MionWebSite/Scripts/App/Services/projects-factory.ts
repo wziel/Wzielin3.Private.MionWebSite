@@ -2,6 +2,13 @@
     "use strict";
 
     export class ProjectsFactory {
+        public getById(id: number): Model.Project{
+            var projects = this.getAll();
+            if (id < 0 || id >= projects.length) {
+                return null;
+            }
+            return projects[id];
+        }
         public getAll(): Model.Project[]{
             return [
                 {
