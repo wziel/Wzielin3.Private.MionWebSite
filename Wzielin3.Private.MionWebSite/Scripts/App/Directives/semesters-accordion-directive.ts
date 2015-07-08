@@ -1,10 +1,15 @@
-﻿module App.Controllers {
+﻿module App.Directives {
     "use strict";
-
-    export class SemestersAccordionController {
-        static $inject = ["$scope"];
-
-        constructor($scope: Scopes.ISemestersAccordionScope) {
+    export class SemestersAccordionDirective implements ng.IDirective {
+        public templateUrl = "Views/SemestersAccordion.html";
+        public restrict = "AE";
+        public scope = {
+            school: "="
+        };
+        public link =
+        (scope: Scopes.ISemestersAccordionScpoe, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
+        };
+        public controller = ($scope: Scopes.ISemestersAccordionScpoe) => {
             $scope.extended = [];
             $scope.chartCollapsed = true;
             $scope.filterValue = "";
@@ -32,12 +37,20 @@
             }
             $scope.allClasses = classes;
         }
+
+        public static Factory() {
+            var directive = () => {
+                return new SemestersAccordionDirective();
+            }
+            directive.$inject = [];
+            return directive;
+        }
     }
 }
 
-module App.Controllers.Scopes {
+module App.Directives.Scopes {
     "use strict";
-    export interface ISemestersAccordionScope extends ng.IScope {
+    export interface ISemestersAccordionScpoe extends ng.IScope {
         school: App.Services.Model.School;
         extended: boolean[];
         collapseAll: () => void;

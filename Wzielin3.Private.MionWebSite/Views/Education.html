@@ -11,39 +11,7 @@
             </h5>
         </div>
         <hr />
-        <div ng-controller="SemestersAccordionController" class="container-fluid">
-            <div class="row panel-heading">
-                <div class="col-md-6">
-                    <button type="button" class="btn btn-default" ng-click="extendAll()">Extend all</button>
-                    <button type="button" class="btn btn-default" ng-click="collapseAll()">Collapse all</button>
-                    <button type="button" class="btn btn-default" ng-init="chartCollapsed = true" ng-click="chartCollapsed = !chartCollapsed"
-                            ng-show="allClasses.length > 0">Show chart</button>
-                </div>
-                <div class="col-md-6">
-                    <input class="form-control" ng-model="filterValue" placeholder="Search" />
-                </div>
-            </div>
-            <div collapse="chartCollapsed">
-                <class-summary classes="allClasses"></class-summary>
-            </div>
-            <accordion close-others="false">
-                <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}"
-                                 is-open="extended[$index]" class="row">
-                    <div ng-repeat="class in semester.classes | filter:filterValue" class="container">
-                        <div class="col-md-6 col-xs-10">{{class.name}}</div>
-                        <div class="col-md-1 col-xs-2">{{class.grade}}</div>
-                        <div class="col-md-5 hidden-sm hidden-xs">{{class.lecturer.title}} {{class.lecturer.name}}</div>
-                    </div>
-                    <hr />
-                    <div ng-if="semester.graded">
-                        <button class="btn btn-default center-block" ng-init="chartCollapsed = true" ng-click="chartCollapsed = !chartCollapsed">Show chart</button>
-                        <div collapse="chartCollapsed">
-                            <class-summary classes="semester.classes"></class-summary>
-                        </div>
-                    </div>
-                </accordion-group>
-            </accordion>
-        </div>
+        <semesters-accordion school="school"></semesters-accordion>
         <hr />
     </tab>
 </tabset>
