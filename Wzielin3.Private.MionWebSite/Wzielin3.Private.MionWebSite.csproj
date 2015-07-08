@@ -24,6 +24,9 @@
     <Content Include="Content\External\bootstrap\css\bootstrap.css" />
     <Content Include="Content\External\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\External\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Data\bg1.jpg" />
+    <Content Include="Data\bg2].jpg" />
+    <Content Include="Data\bg3.jpg" />
     <Content Include="Data\kitten1.jpg" />
     <Content Include="Data\kitten2.jpg" />
     <Content Include="Data\kitten3.jpg" />

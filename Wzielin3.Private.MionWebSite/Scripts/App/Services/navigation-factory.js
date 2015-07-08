@@ -23,7 +23,7 @@ var App;
                     {
                         displayName: "About",
                         path: "/about"
-                    },
+                    }
                 ];
             };
             return NavigationFactory;

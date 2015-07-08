@@ -6,6 +6,13 @@ var App;
         var ProjectsFactory = (function () {
             function ProjectsFactory() {
             }
+            ProjectsFactory.prototype.getById = function (id) {
+                var projects = this.getAll();
+                if (id < 0 || id >= projects.length) {
+                    return null;
+                }
+                return projects[id];
+            };
             ProjectsFactory.prototype.getAll = function () {
                 return [
                     {
