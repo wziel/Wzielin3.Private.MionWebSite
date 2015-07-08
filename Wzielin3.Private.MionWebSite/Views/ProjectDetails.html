@@ -2,9 +2,9 @@
 <div class="jumbotron container">
 
     <div id="slides_control" class="container col-md-5">
-        <carousel interval="carousel.interval">
+        <carousel interval="carousel.interval" disable-ng-animate>
             <slide ng-repeat="slide in carousel.slides">
-                    <img ng-src="{{slide}}">
+                <img ng-src="{{slide}}">
             </slide>
         </carousel>
     </div>

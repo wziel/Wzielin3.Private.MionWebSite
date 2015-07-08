@@ -5,7 +5,7 @@
         <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales, mi a sagittis egestas, nisl nisl finibus velit, a mattis est dui in enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas porta arcu quis dui suscipit porta. Nulla tincidunt fermentum arcu at faucibus. Ut sit amet pretium ligula. Integer eu turpis non orci pharetra finibus id at leo. Cras ornare et metus sit amet elementum. In massa metus, dictum in lorem quis, maximus mattis lectus.</span>
     </div>
     <div id="slides_control" class="container col-md-5">
-        <carousel interval="carousel.interval">
+        <carousel interval="carousel.interval" disable-ng-animate>
             <slide ng-repeat="slide in carousel.slides">
                 <a ng-href="{{slide.path}}">
                     <img ng-src="{{slide.images.main}}">
