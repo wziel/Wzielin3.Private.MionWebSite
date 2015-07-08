@@ -3,21 +3,21 @@
         <div class="col-md-6">
             <button type="button" class="btn btn-default" ng-click="extendAll()">Extend all</button>
             <button type="button" class="btn btn-default" ng-click="collapseAll()">Collapse all</button>
-            <button type="button" class="btn btn-default" ng-init="chartCollapsed = true" ng-click="chartCollapsed = !chartCollapsed"
-                    ng-show="allClasses.length > 0">
-                Show chart
+            <button type="button" class="btn btn-default" ng-click="showChartMain = !showChartMain" ng-show="allClasses.length > 0">
+                <span ng-hide="showChartMain">Show chart</span>
+                <span ng-show="showChartMain">Hide chart</span>
             </button>
         </div>
         <div class="col-md-6">
-            <input class="form-control" ng-model="filterValue" placeholder="Search" />
+            <input class="form-control" ng-model="filterValue" placeholder="Filter" />
         </div>
     </div>
-    <div collapse="chartCollapsed">
+    <div collapse="!showChartMain">
         <class-summary classes="allClasses"></class-summary>
     </div>
     <accordion close-others="false">
         <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}"
-                         is-open="extended[$index]" class="row">
+                         is-open="showAccordion[$index]" class="row">
             <div ng-repeat="class in semester.classes | filter:filterValue" class="container">
                 <div class="col-md-6 col-xs-10">{{class.name}}</div>
                 <div class="col-md-1 col-xs-2">{{class.grade}}</div>
@@ -25,8 +25,11 @@
             </div>
             <hr />
             <div ng-if="semester.graded">
-                <button class="btn btn-default center-block" ng-init="chartCollapsed = true" ng-click="chartCollapsed = !chartCollapsed">Show chart</button>
-                <div collapse="chartCollapsed">
+                <button class="btn btn-default center-block" ng-click="showChart[$index] = !showChart[$index]">
+                    <span ng-hide="showChart[$index]">Show chart</span>
+                    <span ng-show="showChart[$index]">Hide chart</span>
+                </button>
+                <div collapse="!showChart[$index]">
                     <class-summary classes="semester.classes"></class-summary>
                 </div>
             </div>

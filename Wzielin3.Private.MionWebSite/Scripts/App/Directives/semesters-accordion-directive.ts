@@ -10,22 +10,24 @@
         (scope: Scopes.ISemestersAccordionScpoe, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
         };
         public controller = ($scope: Scopes.ISemestersAccordionScpoe) => {
-            $scope.extended = [];
-            $scope.chartCollapsed = true;
+            $scope.showAccordion = [];
+            $scope.showChart = [];
+            $scope.showChartMain = false;
             $scope.filterValue = "";
             $scope.collapseAll = function () {
                 for (var i = 0; i < $scope.school.semesters.length; ++i) {
-                    $scope.extended[i] = false;
+                    $scope.showAccordion[i] = false;
                 }
             }
             $scope.extendAll = function () {
                 for (var i = 0; i < $scope.school.semesters.length; ++i) {
-                    $scope.extended[i] = true;
+                    $scope.showAccordion[i] = true;
                 }
             }
 
             for (var i = 0; i < $scope.school.semesters.length; ++i) {
-                $scope.extended.push(true);
+                $scope.showAccordion.push(true);
+                $scope.showChart.push(false);
             }
 
             var classes: Services.Model.Classes[];
@@ -52,11 +54,12 @@ module App.Directives.Scopes {
     "use strict";
     export interface ISemestersAccordionScpoe extends ng.IScope {
         school: App.Services.Model.School;
-        extended: boolean[];
+        allClasses: Services.Model.Classes[];
+        showChartMain: boolean;
+        showChart: boolean[];
+        showAccordion: boolean[];
+        filterValue: string;
         collapseAll: () => void;
         extendAll: () => void;
-        filterValue: string;
-        chartCollapsed: boolean;
-        allClasses: Services.Model.Classes[];
     }
 }
