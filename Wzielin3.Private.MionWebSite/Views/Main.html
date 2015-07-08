@@ -1,58 +1,60 @@
-﻿<div class="jumbotron container">
-    <div class="container  col-md-7">
-        <h1>Wojciech Zieliński</h1>
-        <p>This site is using AngularJS, Typescript and Bootstrap.</p>
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales, mi a sagittis egestas, nisl nisl finibus velit, a mattis est dui in enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas porta arcu quis dui suscipit porta. Nulla tincidunt fermentum arcu at faucibus. Ut sit amet pretium ligula. Integer eu turpis non orci pharetra finibus id at leo. Cras ornare et metus sit amet elementum. In massa metus, dictum in lorem quis, maximus mattis lectus.</span>
+﻿<div class="container">
+    <div class="jumbotron container">
+        <div class="container  col-md-7">
+            <h1>Wojciech Zieliński</h1>
+            <p>This site is using AngularJS, Typescript and Bootstrap.</p>
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales, mi a sagittis egestas, nisl nisl finibus velit, a mattis est dui in enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas porta arcu quis dui suscipit porta. Nulla tincidunt fermentum arcu at faucibus. Ut sit amet pretium ligula. Integer eu turpis non orci pharetra finibus id at leo. Cras ornare et metus sit amet elementum. In massa metus, dictum in lorem quis, maximus mattis lectus.</span>
+        </div>
+        <div id="slides_control" class="container col-md-5">
+            <carousel interval="carousel.interval" disable-ng-animate>
+                <slide ng-repeat="slide in carousel.slides">
+                    <a ng-href="{{slide.path}}">
+                        <img ng-src="{{slide.images.main}}">
+                        <div class="carousel-caption">
+                            <h4>{{slide.title}}</h4>
+                        </div>
+                    </a>
+                </slide>
+            </carousel>
+        </div>
     </div>
-    <div id="slides_control" class="container col-md-5">
-        <carousel interval="carousel.interval" disable-ng-animate>
-            <slide ng-repeat="slide in carousel.slides">
-                <a ng-href="{{slide.path}}">
-                    <img ng-src="{{slide.images.main}}">
-                    <div class="carousel-caption">
-                        <h4>{{slide.title}}</h4>
-                    </div>
-                </a>
-            </slide>
-        </carousel>
+
+    <div>
+        <div class="col-md-4">
+            <h3>Lorem ipsum dolor sit</h3>
+            <p>
+                Vestibulum lobortis est nisl, ac viverra leo congue sed. Vivamus tempor, est ac ultrices vehicula,
+                lacus velit maximus dolor, vel faucibus eros ante ac nulla. Etiam a felis erat. Vestibulum id urna
+                eget eros vehicula aliquet. Sed dignissim id odio a pharetra. Integer non turpis id metus congue tincidunt nec vitae risus.
+            </p>
+            <p>
+                <a class="btn" href="http://google.com">Learn More »</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Pellentesque!</h3>
+            <p>
+                In in libero lacus. Fusce ut dui hendrerit orci efficitur pulvinar sit amet id purus. Ut sit amet euismod eros.
+                Etiam rutrum nisl purus, vitae egestas dolor dignissim quis. Vivamus porttitor, ligula pulvinar sollicitudin dignissim,
+                arcu urna pellentesque diam, aliquam imperdiet eros metus a sapien. Nunc eget nulla justo. Ut eget neque cursus, posuere
+                eros ut, tristique est. Quisque diam nisi, faucibus vitae arcu vitae, tempus vestibulum nisl. Sed pharetra turpis mi,
+                vitae dictum augue tincidunt consequat. Sed id vulputate risus. Donec finibus tortor vitae felis semper suscipit. Duis ut maximus nunc.
+            </p>
+            <p>
+                <a class="btn" href="http://google.com">Learn More »</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Nullam hendrerit turpis</h3>
+            <p>
+                Quisque vulputate, nunc nec egestas tincidunt, nunc tellus porttitor lectus, non dapibus erat mauris at orci.
+                Aenean posuere ligula sed velit volutpat maximus. Praesent tellus velit, viverra ac purus a, pretium luctus urna.
+            </p>
+            <p>
+                <a class="btn" href="http://google.com">Learn More »</a>
+            </p>
+        </div>
+
     </div>
+
 </div>
-
-<div>
-    <div class="col-md-4">
-        <h3>Lorem ipsum dolor sit</h3>
-        <p>
-            Vestibulum lobortis est nisl, ac viverra leo congue sed. Vivamus tempor, est ac ultrices vehicula,
-            lacus velit maximus dolor, vel faucibus eros ante ac nulla. Etiam a felis erat. Vestibulum id urna
-            eget eros vehicula aliquet. Sed dignissim id odio a pharetra. Integer non turpis id metus congue tincidunt nec vitae risus.
-        </p>
-        <p>
-            <a class="btn" href="http://google.com">Learn More »</a>
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h3>Pellentesque!</h3>
-        <p>
-            In in libero lacus. Fusce ut dui hendrerit orci efficitur pulvinar sit amet id purus. Ut sit amet euismod eros.
-            Etiam rutrum nisl purus, vitae egestas dolor dignissim quis. Vivamus porttitor, ligula pulvinar sollicitudin dignissim,
-            arcu urna pellentesque diam, aliquam imperdiet eros metus a sapien. Nunc eget nulla justo. Ut eget neque cursus, posuere
-            eros ut, tristique est. Quisque diam nisi, faucibus vitae arcu vitae, tempus vestibulum nisl. Sed pharetra turpis mi,
-            vitae dictum augue tincidunt consequat. Sed id vulputate risus. Donec finibus tortor vitae felis semper suscipit. Duis ut maximus nunc.
-        </p>
-        <p>
-            <a class="btn" href="http://google.com">Learn More »</a>
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h3>Nullam hendrerit turpis</h3>
-        <p>
-            Quisque vulputate, nunc nec egestas tincidunt, nunc tellus porttitor lectus, non dapibus erat mauris at orci.
-            Aenean posuere ligula sed velit volutpat maximus. Praesent tellus velit, viverra ac purus a, pretium luctus urna.
-        </p>
-        <p>
-            <a class="btn" href="http://google.com">Learn More »</a>
-        </p>
-    </div>
-
-</div>
-
