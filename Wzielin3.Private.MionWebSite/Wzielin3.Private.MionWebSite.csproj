@@ -18,6 +18,7 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Content\App\education.css" />
     <Content Include="Content\App\index.css" />
     <Content Include="Content\External\angular-nvd3-directives\nv.d3.css" />
     <Content Include="Content\External\bootstrap\css\bootstrap.css" />

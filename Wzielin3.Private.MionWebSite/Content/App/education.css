@@ -1,0 +1,53 @@
+﻿/*.education-tabs-animate > .tab-content {
+    position: absolute;
+}
+
+.education-tabs-animate > .tab-content > .tab-pane {
+    -moz-transition: all linear 0.5s;
+    -o-transition: all linear 0.5s;
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.education-tabs-animate > .tab-content > .tab-pane.active-remove {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: block;
+}
+
+.education-tabs-animate > .tab-content > .tab-pane.active-remove-active {
+    position: absolute;
+    opacity: 0;
+}
+
+.education-tabs-animate > .tab-content > .tab-pane.active-add {
+    position: absolute;
+    opacity: 0;
+}*/
+
+.education-tabs-animate > .tab-content {
+    position: relative;
+}
+
+    .education-tabs-animate > .tab-content > .tab-pane {
+        -moz-transition: all linear 1s;
+        -o-transition: all linear 1s;
+        -webkit-transition: all linear 1s;
+        transition: all linear 1s;
+    }
+
+        .education-tabs-animate > .tab-content > .tab-pane.active-remove {
+            position: relative;
+            top: 0;
+            width: 100%;
+            display: block;
+        }
+
+        .education-tabs-animate > .tab-content > .tab-pane.active-remove-active {
+            opacity: 0;
+        }
+        
+        .education-tabs-animate > .tab-content > .tab-pane.active-add {
+            opacity: 0;
+        }
