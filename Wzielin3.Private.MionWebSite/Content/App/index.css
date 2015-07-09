@@ -22,7 +22,11 @@
 }
 
 body {
-    background: url("../../Data/bg3.jpg") fixed;
+    background: url("../../Data/bg3.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .container-color-bg {
