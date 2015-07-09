@@ -22,7 +22,7 @@
 }
 
 body {
-    background: url("/Data/bg3.jpg") fixed;
+    background: url("../../Data/bg3.jpg") fixed;
 }
 
 .container-color-bg {
