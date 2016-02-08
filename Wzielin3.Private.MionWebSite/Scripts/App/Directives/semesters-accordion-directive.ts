@@ -30,7 +30,7 @@
                 $scope.showChart.push(false);
             }
 
-            var classes: Services.Model.Classes[];
+            var classes: Models.Education.Classes[];
             classes = [];
             for (var i = 0; i < $scope.school.semesters.length; ++i) {
                 if ($scope.school.semesters[i].gradeUnit) {
@@ -53,8 +53,8 @@
 module App.Directives.Scopes {
     "use strict";
     export interface ISemestersAccordionScpoe extends ng.IScope {
-        school: App.Services.Model.School;
-        allClasses: Services.Model.Classes[];
+        school: Models.Education.School;
+        allClasses: Models.Education.Classes[];
         showChartMain: boolean;
         showChart: boolean[];
         showAccordion: boolean[];

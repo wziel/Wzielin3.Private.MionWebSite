@@ -83,6 +83,9 @@
     <TypeScriptCompile Include="Scripts\App\Controllers\projects-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Directives\class-summary-chart-directive.ts" />
     <TypeScriptCompile Include="Scripts\App\Directives\semesters-accordion-directive.ts" />
+    <TypeScriptCompile Include="Scripts\App\Models\education-models.ts" />
+    <TypeScriptCompile Include="Scripts\App\Models\navigation-models.ts" />
+    <TypeScriptCompile Include="Scripts\App\Models\projects-models.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\education-factory.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\navigation-factory.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\personal-factory.ts" />

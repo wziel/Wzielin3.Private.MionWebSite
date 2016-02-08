@@ -21,7 +21,7 @@
 module App.Controllers.Scopes {
     "use strict";
     export interface IIndexScope extends ng.IScope {
-        navigation: Services.Model.Navigation[];
+        navigation: App.Models.Navigation.Navigation[];
         activeViewPath: string;
     }
 }

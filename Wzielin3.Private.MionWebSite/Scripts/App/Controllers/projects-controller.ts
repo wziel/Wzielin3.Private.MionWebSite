@@ -15,6 +15,6 @@ module App.Controllers {
 module App.Controllers.Scopes {
     "use strict";
     export interface IProjectsScope extends ng.IScope {
-        projects: Services.Model.Project[];
+        projects: App.Models.Projects.Project[];
     }
 }

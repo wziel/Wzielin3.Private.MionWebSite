@@ -2,7 +2,7 @@
     "use strict";
 
     export class NavigationFactory {
-        public getAll(): Model.Navigation[] {
+        public getAll(): App.Models.Navigation.Navigation[] {
             return [
                 {
                     displayName: "Home",
@@ -22,12 +22,5 @@
                 }
             ]
         }
-    }
-}
-
-module App.Services.Model {
-    export class Navigation {
-        displayName: string;
-        path: string;
     }
 }

@@ -44,7 +44,7 @@
 module App.Directives.Scopes {
     "use strict";
     export interface IClassSummaryChartScope extends ng.IScope {
-        classes: App.Services.Model.Classes[];
+        classes: Models.Education.Classes[];
         chartData: Services.Model.ClassSummaryChartModel;
     }
 } 

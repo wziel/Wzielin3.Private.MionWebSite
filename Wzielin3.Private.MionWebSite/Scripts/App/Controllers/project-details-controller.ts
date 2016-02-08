@@ -28,7 +28,7 @@
 module App.Controllers.Scopes {
     "use strict";
     export interface IProjectDetailsScope extends ng.IScope {
-        project: Services.Model.Project;
+        project: App.Models.Projects.Project;
         carousel: {
             interval: number;
             slides: string[];

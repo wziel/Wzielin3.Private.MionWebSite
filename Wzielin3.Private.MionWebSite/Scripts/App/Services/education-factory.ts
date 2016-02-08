@@ -2,7 +2,7 @@
     "use strict";
 
     export class EducationFactory {
-        public get(): Model.EducationHistory {
+        public get(): App.Models.Education.EducationHistory {
             return {
                 schools: [
                     {
@@ -13,7 +13,7 @@
                         endDate: null,
                         semesters: [
                             {
-                                gradeUnit: Model.GradeUnit.From2To5,
+                                gradeUnit: App.Models.Education.GradeUnit.From2To5,
                                 name: "1st Semester",
                                 classes: [
                                     {
@@ -82,7 +82,7 @@
                                 ]
                             },
                             {
-                                gradeUnit: Model.GradeUnit.From2To5,
+                                gradeUnit: App.Models.Education.GradeUnit.From2To5,
                                 name: "2nd Semester",
                                 classes: [
                                     {
@@ -170,7 +170,7 @@
                                 ]
                             },
                             {
-                                gradeUnit: Model.GradeUnit.From2To5,
+                                gradeUnit: App.Models.Education.GradeUnit.From2To5,
                                 name: "3rd Semester",
                                 classes: [
                                     {
@@ -248,7 +248,7 @@
                                 ]
                             },
                             {
-                                gradeUnit: Model.GradeUnit.From2To5,
+                                gradeUnit: App.Models.Education.GradeUnit.From2To5,
                                 name: "4th Semester",
                                 classes: [
                                     {
@@ -326,7 +326,7 @@
                                 ]
                             },
                             {
-                                gradeUnit: Model.GradeUnit.From2To5,
+                                gradeUnit: App.Models.Education.GradeUnit.From2To5,
                                 name: "5th semester",
                                 classes: [
                                     {
@@ -413,7 +413,7 @@
                         endDate: new Date(2013, 4),
                         semesters: [
                             {
-                                gradeUnit: Model.GradeUnit.Percetange,
+                                gradeUnit: App.Models.Education.GradeUnit.Percetange,
                                 name: "Matura results",
                                 classes: [
                                     {
@@ -441,43 +441,5 @@
                 ]
             }
         }
-    }
-}
-
-module App.Services.Model {
-    export class EducationHistory {
-        schools: Model.School[];
-    }
-
-    export class School {
-        name: string;
-        faculty: string;
-        field: string;
-        startDate: Date;
-        endDate: Date;
-        semesters: Model.Semester[];
-    }
-
-    export class Semester {
-        name: string;
-        classes: Model.Classes[];
-        gradeUnit: GradeUnit;
-    }
-
-    export enum GradeUnit {
-        Percetange,
-        From2To5
-    }
-
-    export class Classes {
-        name: string;
-        lecturer: Model.Lecturer;
-        grade: number;
-        weight: number;
-    }
-
-    export class Lecturer {
-        name: string;
-        title: string;
     }
 }

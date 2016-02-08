@@ -2,14 +2,14 @@
     "use strict";
 
     export class ProjectsFactory {
-        public getById(id: number): Model.Project{
+        public getById(id: number): App.Models.Projects.Project{
             var projects = this.getAll();
             if (id < 0 || id >= projects.length) {
                 return null;
             }
             return projects[id];
         }
-        public getAll(): Model.Project[]{
+        public getAll(): App.Models.Projects.Project[]{
             return [
                 {
                     id: 0,
@@ -42,19 +42,6 @@
                     }
                 }
             ];
-        }
-    }
-}
-
-module App.Services.Model {
-    export class Project {
-        id: number;
-        path: string;
-        title: string;
-        description: string;
-        images: {
-            main: string;
-            getAll(): string[];
         }
     }
 }
