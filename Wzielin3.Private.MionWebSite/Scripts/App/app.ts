@@ -17,14 +17,15 @@ module App {
                     .otherwise({ redirectTo: '/home' });
             }])
                 .controller("AboutController", ["$scope", ($scope) => new Controllers.AboutController($scope)])
-                .controller("MainController", ["$scope", "projects", ($scope, projects) => new Controllers.MainController($scope, projects)])
+                .controller("MainController", ["$scope", "personal", ($scope, personal) => new Controllers.MainController($scope, personal)])
                 .controller("IndexController", ['$scope', '$route', '$routeParams', '$location', 'navigation', ($scope, $route, $routeParams, $location, navigation) => new Controllers.IndexController($scope, $route, $routeParams, $location, navigation)])
                 .controller("ProjectDetailsController", ['$scope', '$routeParams', '$location', 'projects', ($scope, $routeParams, $location, projects) => new Controllers.ProjectDetailsController($scope, $routeParams, $location, projects)])
                 .controller("ProjectsController", ["$scope", "projects", ($scope, projects) => new Controllers.ProjectsController($scope, projects)])
                 .controller("EducationController", ["$scope", "education", ($scope, education) => new Controllers.EducationController($scope, education)])
                 .factory("education",() => new Services.EducationFactory())
                 .factory("projects",() => new Services.ProjectsFactory())
-                .factory("navigation",() => new Services.NavigationFactory())
+                .factory("navigation", () => new Services.NavigationFactory())
+                .factory("personal", () => new Services.PersonalFactory())
                 .directive('classSummary', Directives.ClassSummaryChartDirective.Factory())
                 .directive('semestersAccordion', Directives.SemestersAccordionDirective.Factory())
         }

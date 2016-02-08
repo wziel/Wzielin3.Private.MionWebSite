@@ -26,14 +26,14 @@
             }
 
             for (var i = 0; i < $scope.school.semesters.length; ++i) {
-                $scope.showAccordion.push(true);
+                $scope.showAccordion.push(false);
                 $scope.showChart.push(false);
             }
 
             var classes: Services.Model.Classes[];
             classes = [];
             for (var i = 0; i < $scope.school.semesters.length; ++i) {
-                if ($scope.school.semesters[i].graded) {
+                if ($scope.school.semesters[i].gradeUnit) {
                     classes = classes.concat($scope.school.semesters[i].classes);
                 }
             }

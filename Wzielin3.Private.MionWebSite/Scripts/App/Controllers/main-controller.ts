@@ -2,12 +2,12 @@
     "use strict";
 
     export class MainController {
-        static $inject = ["$scope", "projects"];
+        static $inject = ["$scope", "personal"];
 
-        constructor($scope: Scopes.IMainScope, projects: any) {
+        constructor($scope: Scopes.IMainScope, personal: Services.PersonalFactory) {
             $scope.carousel = {
                 interval: 5000,
-                slides: projects.getAll()
+                slides: personal.getAllImages()
             };
         }
     }
@@ -18,7 +18,7 @@ module App.Controllers.Scopes {
     export interface IMainScope extends ng.IScope {
         carousel: {
             interval: number;
-            slides: any[];
+            slides: string[];
         }
     }
 }

@@ -13,7 +13,7 @@
                         endDate: null,
                         semesters: [
                             {
-                                graded: true,
+                                gradeUnit: Model.GradeUnit.From2To5,
                                 name: "1st Semester",
                                 classes: [
                                     {
@@ -82,7 +82,7 @@
                                 ]
                             },
                             {
-                                graded: true,
+                                gradeUnit: Model.GradeUnit.From2To5,
                                 name: "2nd Semester",
                                 classes: [
                                     {
@@ -170,7 +170,7 @@
                                 ]
                             },
                             {
-                                graded: true,
+                                gradeUnit: Model.GradeUnit.From2To5,
                                 name: "3rd Semester",
                                 classes: [
                                     {
@@ -248,7 +248,7 @@
                                 ]
                             },
                             {
-                                graded: true,
+                                gradeUnit: Model.GradeUnit.From2To5,
                                 name: "4th Semester",
                                 classes: [
                                     {
@@ -325,6 +325,84 @@
                                     },
                                 ]
                             },
+                            {
+                                gradeUnit: Model.GradeUnit.From2To5,
+                                name: "5th semester",
+                                classes: [
+                                    {
+                                        name: "Analiza algorytmów",
+                                        grade: 5,
+                                        lecturer: {
+                                            name: "Łukasz skonieczny",
+                                            title: "dr inż."
+                                        },
+                                        weight: 4
+                                    },
+                                    {
+                                        name: "Bezpieczeństwo systemów i sieci",
+                                        grade: 5,
+                                        lecturer: {
+                                            name: "Krzysztof Cabaj",
+                                            title: "dr inż."
+                                        },
+                                        weight: 3
+                                    },
+                                    {
+                                        name: "Bazy danych 2",
+                                        grade: 5,
+                                        lecturer: {
+                                            name: "Piotr Salata",
+                                            title: "mgr inż."
+                                        },
+                                        weight: 3
+                                    },
+                                    {
+                                        name: "Inżynieria oprogramowania",
+                                        grade: 4.5,
+                                        lecturer: {
+                                            name: "Krzysztof Sacha",
+                                            title: "prof. dr hab."
+                                        },
+                                        weight: 3
+                                    },
+                                    {
+                                        name: "Systemy czasu rzeczywistego",
+                                        grade: 4.5,
+                                        lecturer: {
+                                            name: "Krzysztof Sacha",
+                                            title: "prof. dr hab."
+                                        },
+                                        weight: 3
+                                    },
+                                    {
+                                        name: "Podstawy sztucznej inteligencji",
+                                        grade: 4,
+                                        lecturer: {
+                                            name: "Paweł Wawrzyński",
+                                            title: "dr inż."
+                                        },
+                                        weight: 3
+                                    },
+                                    {
+                                        name: "Techniki internetowe",
+                                        grade: 5,
+                                        lecturer: {
+                                            name: "Grzegorz Blinowski",
+                                            title: "dr inż."
+                                        },
+                                        weight: 3
+                                    },
+                                    {
+                                        name: "Język angielski poziom C1",
+                                        grade: 5,
+                                        lecturer: {
+                                            name: "Jan Ścieński",
+                                            title: ""
+                                        },
+                                        weight: 2
+                                    }
+                                ]
+                            }
                         ]
                     },
                     {
@@ -335,7 +413,7 @@
                         endDate: new Date(2013, 4),
                         semesters: [
                             {
-                                graded: false,
+                                gradeUnit: Model.GradeUnit.Percetange,
                                 name: "Matura results",
                                 classes: [
                                     {
@@ -356,7 +434,7 @@
                                         lecturer: null,
                                         weight: 1
                                     },
-                                    ]
+                                ]
                             }
                         ]
                     },
@@ -383,7 +461,12 @@ module App.Services.Model {
     export class Semester {
         name: string;
         classes: Model.Classes[];
-        graded: boolean;
+        gradeUnit: GradeUnit;
+    }
+
+    export enum GradeUnit {
+        Percetange,
+        From2To5
     }
 
     export class Classes {

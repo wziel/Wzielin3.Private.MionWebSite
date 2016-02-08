@@ -7,12 +7,7 @@
     <div id="slides_control" class="container col-md-5">
         <carousel interval="carousel.interval">
             <slide ng-repeat="slide in carousel.slides">
-                <a ng-href="{{slide.path}}">
-                    <img ng-src="{{slide.images.main}}">
-                    <div class="carousel-caption">
-                        <h4>{{slide.title}}</h4>
-                    </div>
-                </a>
+                <img ng-src="{{slide}}">
             </slide>
         </carousel>
     </div>

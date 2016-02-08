@@ -23,6 +23,13 @@
     <Content Include="Content\External\bootstrap\css\bootstrap.css" />
     <Content Include="Content\External\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\External\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Data\Images\Personal\personal1.jpg" />
+    <Content Include="Data\Images\Personal\personal2.jpg" />
+    <Content Include="Data\Images\Personal\personal3.jpg" />
+    <Content Include="Data\Images\Personal\personal4.jpg" />
+    <Content Include="Data\Images\Personal\personal5.jpg" />
+    <Content Include="Data\Images\Personal\personal6.jpg" />
+    <Content Include="Data\Images\Personal\personal7.jpg" />
     <Content Include="Data\kitten1.jpg" />
     <Content Include="Data\kitten2.jpg" />
     <Content Include="Data\kitten3.jpg" />
@@ -78,6 +85,7 @@
     <TypeScriptCompile Include="Scripts\App\Directives\semesters-accordion-directive.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\education-factory.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\navigation-factory.ts" />
+    <TypeScriptCompile Include="Scripts\App\Services\personal-factory.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\projects-factory.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
