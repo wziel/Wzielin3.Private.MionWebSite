@@ -44,7 +44,7 @@
                     id: 2,
                     path: '#/projects/2',
                     title: "Java communicator",
-                    description: "This one was a project for event-oriented programming classes (pl. Programowanie Zdarzeniowe) at Warsaw University of Technology. It is writted in Java using swing framework. Consists of two projects - client and server. This app enables multiple users to connect to the server and send messages. It has no permament storage / database connection, so users connect via freely selected usernames. This is my first and probably the biggest application written in Java and despite the fact that I'm a .NET guy (Microsoft forever <3) I believe that it is written in a pretty neat way. But still I prefer .NET - this Java app just showcases that I can learn new stuff and write good code using it!",
+                    description: "This one was a project for event-oriented programming classes (pl. Programowanie Zdarzeniowe) at Warsaw University of Technology. It is writted in Java using swing framework. Consists of two projects - client and server. This app enables multiple users to connect to the server and send messages. It has no permament storage / database connection, so users connect via freely selected usernames. This is my first and probably the biggest application written in Java and despite the fact that I'm a .NET guy I believe that it is written in a pretty neat way.",
                     images: {
                         main: "Data/Images/Projects/Proz/projects-proz3.png",
                         getAll: function () {
