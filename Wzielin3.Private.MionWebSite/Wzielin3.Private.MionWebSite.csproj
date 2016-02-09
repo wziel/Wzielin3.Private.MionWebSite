@@ -38,6 +38,10 @@
     <Content Include="Data\kitten6.jpg" />
     <Content Include="Data\kitten7.jpg" />
     <Content Include="Data\kitten8.jpg" />
+    <Content Include="Data\Projects\Gkom\projects-gkom1.jpg" />
+    <Content Include="Data\Projects\Gkom\projects-gkom2.jpg" />
+    <Content Include="Data\Projects\Gkom\projects-gkom3.jpg" />
+    <Content Include="Data\Projects\Gkom\projects-gkom4.jpg" />
     <Content Include="Data\Projects\OI\projects-oi1.png" />
     <Content Include="Data\Projects\OI\projects-oi2.png" />
     <Content Include="Data\Projects\OI\projects-oi3.png" />
@@ -91,8 +95,8 @@
     <TypeScriptCompile Include="Scripts\App\Controllers\main-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\project-details-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\projects-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\Directives\class-summary-chart-directive.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\Directives\semesters-accordion-directive.ts" />
+    <TypeScriptCompile Include="Scripts\App\Directives\class-summary-chart-directive.ts" />
+    <TypeScriptCompile Include="Scripts\App\Directives\semesters-accordion-directive.ts" />
     <TypeScriptCompile Include="Scripts\App\helpers.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\education-models.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\navigation-models.ts" />
