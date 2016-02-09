@@ -4,8 +4,8 @@
             <button type="button" class="btn btn-default" ng-click="extendAll()">Extend all</button>
             <button type="button" class="btn btn-default" ng-click="collapseAll()">Collapse all</button>
             <button type="button" class="btn btn-default" ng-click="showChartMain = !showChartMain" ng-show="allClasses.length > 0">
-                <span ng-hide="showChartMain">Show chart</span>
-                <span ng-show="showChartMain">Hide chart</span>
+                <span ng-hide="showChartMain">Show all grades summary chart</span>
+                <span ng-show="showChartMain">Hide all grades summary chart</span>
             </button>
         </div>
         <div class="col-md-6">
@@ -26,8 +26,8 @@
             <hr />
             <div ng-if="isSemesterGraded(semester)">
                 <button class="btn btn-default center-block" ng-click="showChart[$index] = !showChart[$index]">
-                    <span ng-hide="showChart[$index]">Show chart</span>
-                    <span ng-show="showChart[$index]">Hide chart</span>
+                    <span ng-hide="showChart[$index]">Show grades summary chart</span>
+                    <span ng-show="showChart[$index]">Hide grades summary chart</span>
                 </button>
                 <div collapse="!showChart[$index]">
                     <class-summary classes="semester.classes"></class-summary>
