@@ -34,6 +34,12 @@
     <Content Include="Data\Images\Projects\Gkom\projects-gkom2.jpg" />
     <Content Include="Data\Images\Projects\Gkom\projects-gkom3.jpg" />
     <Content Include="Data\Images\Projects\Gkom\projects-gkom4.jpg" />
+    <Content Include="Data\Images\Projects\MEANApp\projects-meanapp1.png" />
+    <Content Include="Data\Images\Projects\MEANApp\projects-meanapp2.png" />
+    <Content Include="Data\Images\Projects\MEANApp\projects-meanapp3.png" />
+    <Content Include="Data\Images\Projects\MEANApp\projects-meanapp4.png" />
+    <Content Include="Data\Images\Projects\MEANApp\projects-meanapp5.png" />
+    <Content Include="Data\Images\Projects\MEANApp\projects-meanapp6.png" />
     <Content Include="Data\Images\Projects\OI\projects-oi1.png" />
     <Content Include="Data\Images\Projects\OI\projects-oi2.png" />
     <Content Include="Data\Images\Projects\OI\projects-oi3.png" />

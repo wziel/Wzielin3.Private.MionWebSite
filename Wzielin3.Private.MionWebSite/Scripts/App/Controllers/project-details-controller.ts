@@ -17,7 +17,7 @@
             else {
                 $scope.project = project;
                 $scope.carousel = {
-                    interval: 5000,
+                    interval: 4000,
                     slides: project.images.getAll()
                 };
             }

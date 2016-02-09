@@ -6,7 +6,7 @@
 
         constructor($scope: Scopes.IMainScope, personal: Services.PersonalFactory) {
             $scope.carousel = {
-                interval: 5000,
+                interval: 4000,
                 slides: personal.getAllImages()
             };
         }
