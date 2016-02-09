@@ -10,13 +10,13 @@ module App {
                 .config(['$routeProvider', function ($routeProvider) {
                 $routeProvider
                     .when('/home', { templateUrl: 'Views/Main.html', controller: 'MainController' })
-                    .when('/about', { templateUrl: 'Views/About.html', controller: 'AboutController' })
+                    .when('/about', { templateUrl: 'Views/About.html' })
                     .when('/projects', { templateUrl: 'Views/Projects.html', controller: 'ProjectsController' })
                     .when('/projects/:id', { templateUrl: 'Views/ProjectDetails.html', controller: 'ProjectDetailsController' })
                     .when('/education', { templateUrl: 'Views/Education.html', controller: 'EducationController' })
+                    .when('/resume', { templateUrl: "Views/Resume.html" })
                     .otherwise({ redirectTo: '/home' });
             }])
-                .controller("AboutController", ["$scope", ($scope) => new Controllers.AboutController($scope)])
                 .controller("MainController", ["$scope", "personal", ($scope, personal) => new Controllers.MainController($scope, personal)])
                 .controller("IndexController", ['$scope', '$route', '$routeParams', '$location', 'navigation', ($scope, $route, $routeParams, $location, navigation) => new Controllers.IndexController($scope, $route, $routeParams, $location, navigation)])
                 .controller("ProjectDetailsController", ['$scope', '$routeParams', '$location', 'projects', ($scope, $routeParams, $location, projects) => new Controllers.ProjectDetailsController($scope, $routeParams, $location, projects)])

@@ -17,6 +17,10 @@
                     path: "/education"
                 },
                 {
+                    displayName: "My resume",
+                    path: "/resume"
+                },
+                {
                     displayName: "About",
                     path: "/about"
                 }

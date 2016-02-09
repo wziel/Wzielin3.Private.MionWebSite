@@ -55,6 +55,7 @@
     <Content Include="Views\Main.html" />
     <Content Include="Views\ProjectDetails.html" />
     <Content Include="Views\Projects.html" />
+    <Content Include="Views\Resume.html" />
     <Content Include="Views\SemestersAccordion.html" />
     <Content Include="web.config" />
   </ItemGroup>
@@ -66,6 +67,7 @@
     <Content Include="Content\External\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Scripts\External\angular-route\angular-route.min.js.map" />
     <Content Include="Scripts\External\angular\angular.min.js.map" />
+    <Content Include="Data\CV\CV.pdf" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -75,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App\app.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\about-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\education-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\index-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\main-controller.ts" />
