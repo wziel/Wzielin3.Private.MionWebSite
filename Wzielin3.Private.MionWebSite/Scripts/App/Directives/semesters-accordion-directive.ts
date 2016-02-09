@@ -38,6 +38,14 @@
                 }
             }
             $scope.allClasses = classes;
+
+            $scope.getSemesterHeading = (semester: Models.Education.Semester): string => {
+                return semester.name + " - average score: " +
+                    App.Helpers.Education.getAverageScoreFor(semester.classes).toFixed(2).toString();
+            }
+            $scope.isSemesterGraded = (semester: Models.Education.Semester): boolean => {
+                return semester.gradeUnit === Models.Education.GradeUnit.From2To5;
+            }
         }
 
         public static Factory() {
@@ -61,5 +69,7 @@ module App.Directives.Scopes {
         filterValue: string;
         collapseAll: () => void;
         extendAll: () => void;
+        getSemesterHeading: (semester: Models.Education.Semester) => string;
+        isSemesterGraded: (semester: Models.Education.Semester) => boolean;
     }
 }

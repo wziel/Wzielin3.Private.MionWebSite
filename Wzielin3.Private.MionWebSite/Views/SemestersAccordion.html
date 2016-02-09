@@ -16,7 +16,7 @@
         <class-summary classes="allClasses"></class-summary>
     </div>
     <accordion close-others="false">
-        <accordion-group ng-repeat="semester in school.semesters" heading="{{semester.name}}"
+        <accordion-group ng-repeat="semester in school.semesters"  heading="{{getSemesterHeading(semester)}}"
                          is-open="showAccordion[$index]" class="row">
             <div ng-repeat="class in semester.classes | filter:filterValue" class="container">
                 <div class="col-md-6 col-xs-10">{{class.name}}</div>
@@ -24,7 +24,7 @@
                 <div class="col-md-5 hidden-sm hidden-xs">{{class.lecturer.title}} {{class.lecturer.name}}</div>
             </div>
             <hr />
-            <div ng-if="semester.graded">
+            <div ng-if="isSemesterGraded(semester)">
                 <button class="btn btn-default center-block" ng-click="showChart[$index] = !showChart[$index]">
                     <span ng-hide="showChart[$index]">Show chart</span>
                     <span ng-show="showChart[$index]">Hide chart</span>
