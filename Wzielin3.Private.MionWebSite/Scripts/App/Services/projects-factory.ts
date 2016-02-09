@@ -14,32 +14,44 @@
                 {
                     id: 0,
                     path: '#/projects/0',
-                    title: "Lorem ipsum dolor",
-                    description: "Suspendisse vitae nisi magna. Donec interdum fermentum metus non tempor. Vivamus malesuada mollis sollicitudin. Praesent et posuere enim. Vivamus pharetra, tellus eu tempus varius, lacus libero cursus nunc, ac porttitor dui dui in nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur in lorem non orci pulvinar ornare. Donec eu augue ac sem congue pellentesque. Nulla at mauris sit amet diam fringilla tempus. Quisque eleifend maximus aliquet. Cras eget massa sem.",
+                    title: "Polish Olympiad in Informatics tasks",
+                    description: "This project contains solutions to 85 tasks from numerous editions of Polish Olympiad in Informatics. Most of them got 100% points in tests of correctness and speed. Those were solved during my highschool education and were one of my first contacs with programming and algorithms. This code is not of the best quality and usually when I look at it I don't believe that is was me who wrote it... but back then object-oriented programming was a mystery to me, c++ basics was all I knew and the only important thing was that the code worked :) So the quality is not the most important thing here, more important is the quantity - I spent a few months working on these tasks and it resulted in me getting to the final of XX Polish Olympiad in Informatics.",
                     images: {
-                        main: "Data/kitten1.jpg",
-                        getAll: function () { return ["Data/kitten1.jpg", "Data/kitten2.jpg", "Data/kitten3.jpg"] }
-                    }
+                        main: "Data/Projects/OI/projects-oi1.png",
+                        getAll: function () {
+                            return ["Data/Projects/OI/projects-oi1.png",
+                                "Data/Projects/OI/projects-oi2.png", "Data/Projects/OI/projects-oi3.png"]
+                        }
+                    },
+                    githubLink: "https://github.com/wziel/Wzielin3.Private.OlimpiadaInformatyczna"
                 },
                 {
                     id: 1,
                     path: '#/projects/1',
-                    title: "Nam nec enim nec sem",
-                    description: "Nam at lorem sapien. Aliquam nisl turpis, aliquam non pretium nec, blandit non arcu. Mauris consectetur auctor porttitor. Donec semper fermentum massa et volutpat. Fusce mollis euismod ligula, non condimentum tellus condimentum vitae. Quisque finibus, mi vitae euismod ullamcorper, nulla risus auctor enim, vitae eleifend dolor odio ac dolor. Sed erat orci, porttitor vitae metus quis, fermentum condimentum sem. Nam nisl elit, tempus ut elit sit amet, sodales eleifend est. Ut commodo elit purus, a ullamcorper libero consectetur vel. Nam mauris lectus, eleifend lacinia eros maximus, aliquam gravida lorem. Morbi fermentum interdum erat accumsan gravida. Phasellus molestie enim augue, at suscipit massa porttitor eu. Nulla posuere leo non imperdiet tincidunt. Aliquam vitae finibus nisi. Nunc tincidunt mi risus, a feugiat nunc cursus eu. Pellentesque tempor condimentum sem, a suscipit erat pellentesque non.",
+                    title: "This website",
+                    description: "This website is completely written in front-end technologies and all the logic is written in AngularJS. I started working on this website just to see how fun AngularJS is... and it turned out to be pretty fun :) I also combined it with TypeScript to get some power of strong-typing and compile-time validation and I believe it worked out very well. For me AngularJS is an awesome framework because it provides modularity, separation of concerns, the binding mechanism, which is pretty great because it simply makes some things work by themselves.",
                     images: {
-                        main: "Data/kitten4.jpg",
-                        getAll: function () { return ["Data/kitten4.jpg", "Data/kitten3.jpg", "Data/kitten2.jpg", "Data/kitten5.jpg"] }
-                    }
+                        main: "Data/Projects/WebSite/projects-website1.png",
+                        getAll: function () {
+                            return ["Data/Projects/WebSite/projects-website1.png",
+                                "Data/Projects/WebSite/projects-website2.png"]
+                        }
+                    },
+                    githubLink: "https://github.com/wziel/Wzielin3.Private.MionWebSite"
                 },
                 {
                     id: 2,
                     path: '#/projects/2',
-                    title: "Mauris pellentesque",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus diam sem, ultrices a velit vel, facilisis sagittis quam. Nullam id pharetra ex, eu aliquam nibh. Aenean et dolor lectus. Mauris quam ipsum, vehicula et tellus a, placerat volutpat mi. Ut vel pharetra nunc, sit amet tristique elit. Donec lorem eros, vulputate ac justo ut, placerat ultrices velit. Nullam et elementum libero. Sed sodales est et nulla dictum, a iaculis quam suscipit. Ut laoreet purus vitae diam vestibulum faucibus. Nunc scelerisque sed metus a consectetur. Nullam eget nisl vitae justo varius ornare non a sem. Praesent vel interdum tortor. Sed sagittis lacinia nisl, et malesuada purus interdum ut. Nam purus tortor, varius vel velit sed, tempus consectetur tellus. Integer facilisis accumsan erat, sed consectetur odio ultrices et.",
+                    title: "Java communicator",
+                    description: "This one was a project for event-oriented programming classes (pl. Programowanie Zdarzeniowe). It is writted in Java using swing framework. Consists of two projects - client and server. This app enables multiple users to connect to the server and send messages. It has no permament storage / database connection, so users connect via freely selected usernames. This is my first and probably the biggest application written in Java and despite the fact that I'm a .NET guy (Microsoft forever <3) I believe that it is written in a pretty neat way. But still I prefer .NET - this Java app just showcases that I can learn new stuff and write good code using it!",
                     images: {
-                        main: "Data/kitten6.jpg",
-                        getAll: function () { return ["Data/kitten6.jpg", "Data/kitten7.jpg", "Data/kitten3.jpg", "Data/kitten8.jpg", "Data/kitten5.jpg", "Data/kitten1.jpg"] }
-                    }
+                        main: "Data/Projects/Proz/projects-proz3.png",
+                        getAll: function () {
+                            return ["Data/Projects/Proz/projects-proz1.png", "Data/Projects/Proz/projects-proz2.png",
+                                "Data/Projects/Proz/projects-proz3.png", "Data/Projects/Proz/projects-proz4.png"]
+                        }
+                    },
+                    githubLink: "https://github.com/wziel/Wzielin3.Proz.ChatRoom"
                 }
             ];
         }

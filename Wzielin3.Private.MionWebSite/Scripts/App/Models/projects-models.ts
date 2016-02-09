@@ -9,5 +9,6 @@ module App.Models.Projects {
             main: string;
             getAll(): string[];
         }
+        githubLink: string
     }
 }

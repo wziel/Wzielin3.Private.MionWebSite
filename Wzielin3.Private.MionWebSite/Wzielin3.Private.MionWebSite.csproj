@@ -38,6 +38,15 @@
     <Content Include="Data\kitten6.jpg" />
     <Content Include="Data\kitten7.jpg" />
     <Content Include="Data\kitten8.jpg" />
+    <Content Include="Data\Projects\OI\projects-oi1.png" />
+    <Content Include="Data\Projects\OI\projects-oi2.png" />
+    <Content Include="Data\Projects\OI\projects-oi3.png" />
+    <Content Include="Data\Projects\Proz\projects-proz1.png" />
+    <Content Include="Data\Projects\Proz\projects-proz2.png" />
+    <Content Include="Data\Projects\Proz\projects-proz3.png" />
+    <Content Include="Data\Projects\Proz\projects-proz4.png" />
+    <Content Include="Data\Projects\WebSite\projects-website1.png" />
+    <Content Include="Data\Projects\WebSite\projects-website2.png" />
     <Content Include="index.html" />
     <Content Include="Scripts\External\angular-nvd3-directives\angularjs-nvd3-directives.js" />
     <Content Include="Scripts\External\angular-nvd3-directives\angularjs-nvd3-directives.min.js" />
@@ -82,8 +91,8 @@
     <TypeScriptCompile Include="Scripts\App\Controllers\main-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\project-details-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\projects-controller.ts" />
-    <TypeScriptCompile Include="Scripts\App\Directives\class-summary-chart-directive.ts" />
-    <TypeScriptCompile Include="Scripts\App\Directives\semesters-accordion-directive.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\Directives\class-summary-chart-directive.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\Directives\semesters-accordion-directive.ts" />
     <TypeScriptCompile Include="Scripts\App\helpers.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\education-models.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\navigation-models.ts" />
