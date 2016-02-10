@@ -1,0 +1,34 @@
+﻿#background-animation-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.background-animation-element {
+    font-size: 40px;
+    font-family: Arial;
+    font-weight: bolder;
+    color: rgb(120, 120, 120);
+    position: fixed;
+    -moz-animation: cloudAnimation 60s linear;
+    -o-animation: cloudAnimation 60s linear;
+    -webkit-animation: cloudAnimation 60s linear;
+    animation: cloudAnimation 60s linear;
+    z-index: 0;
+}
+
+.well, .jumbotron {
+    background: rgba(230, 230, 230, 0.9)
+}
+
+img {
+    opacity: 1;
+}
+
+@-moz-keyframes cloudAnimation { to { left : 2000px; } }
+@-webkit-keyframes cloudAnimation { to { left : 2000px; } }
+@keyframes cloudAnimation { to { left : 2000px; } }

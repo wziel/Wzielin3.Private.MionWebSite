@@ -1,20 +1,22 @@
-﻿<tabset justified="false" class="container">
-    <tab ng-repeat="school in education.schools" heading="{{school.name}}">
-        <div class="text-center">
-            <h2>{{school.name}}</h2>
-            <h4>{{school.faculty}}</h4>
-            <h4>{{school.field}}</h4>
-            <h5>
-                <span>{{school.startDate.toLocaleDateString()}} - </span>
-                <span ng-show="school.endDate">{{school.endDate.toLocaleDateString()}}</span>
-                <span ng-hide="school.endDate">present</span>
-            </h5>
-            <h5>
-                <span>Average score: {{getAverageScoreForSchool(school)}}</span>
-            </h5>
-        </div>
-        <hr />
-        <semesters-accordion school="school"></semesters-accordion>
-        <hr />
-    </tab>
-</tabset>
+﻿<div class="well container">
+    <tabset justified="false">
+        <tab ng-repeat="school in education.schools" heading="{{school.name}}">
+            <div class="text-center">
+                <h2>{{school.name}}</h2>
+                <h4>{{school.faculty}}</h4>
+                <h4>{{school.field}}</h4>
+                <h5>
+                    <span>{{school.startDate.toLocaleDateString()}} - </span>
+                    <span ng-show="school.endDate">{{school.endDate.toLocaleDateString()}}</span>
+                    <span ng-hide="school.endDate">present</span>
+                </h5>
+                <h5>
+                    <span>Average score: {{getAverageScoreForSchool(school)}}</span>
+                </h5>
+            </div>
+            <hr />
+            <semesters-accordion school="school"></semesters-accordion>
+            <hr />
+        </tab>
+    </tabset>
+</div>

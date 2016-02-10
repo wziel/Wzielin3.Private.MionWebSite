@@ -28,6 +28,7 @@ module App {
                 .factory("personal", () => new Services.PersonalFactory())
                 .directive('classSummary', Directives.ClassSummaryChartDirective.Factory())
                 .directive('semestersAccordion', Directives.SemestersAccordionDirective.Factory())
+                .directive('backgroundAnimation', Directives.BackgroundAnimationDirective.Factory())
         }
     }
 }

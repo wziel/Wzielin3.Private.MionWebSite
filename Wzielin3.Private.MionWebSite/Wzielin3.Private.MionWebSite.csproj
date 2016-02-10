@@ -19,6 +19,7 @@
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Content\App\BackgroundAnimation.css" />
     <Content Include="Content\External\angular-nvd3-directives\nv.d3.css" />
     <Content Include="Content\External\bootstrap\css\bootstrap.css" />
     <Content Include="Content\External\bootstrap\css\bootstrap.min.css" />
@@ -61,6 +62,7 @@
     <Content Include="Scripts\External\angular\angular.js" />
     <Content Include="Scripts\External\angular\angular.min.js" />
     <Content Include="Views\About.html" />
+    <Content Include="Views\BackgroundAnimation.html" />
     <Content Include="Views\ClassSummaryChart.html" />
     <Content Include="Views\Education.html" />
     <Content Include="Views\Main.html" />
@@ -93,6 +95,7 @@
     <TypeScriptCompile Include="Scripts\App\Controllers\main-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\project-details-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\projects-controller.ts" />
+    <TypeScriptCompile Include="Scripts\App\Directives\background-animation-directive.ts" />
     <TypeScriptCompile Include="Scripts\App\Directives\class-summary-chart-directive.ts" />
     <TypeScriptCompile Include="Scripts\App\Directives\semesters-accordion-directive.ts" />
     <TypeScriptCompile Include="Scripts\App\helpers.ts" />
@@ -112,9 +115,7 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\App\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>
