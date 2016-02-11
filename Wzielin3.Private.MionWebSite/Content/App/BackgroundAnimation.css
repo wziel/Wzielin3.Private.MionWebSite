@@ -18,17 +18,44 @@
     -o-animation: cloudAnimation 60s linear;
     -webkit-animation: cloudAnimation 60s linear;
     animation: cloudAnimation 60s linear;
-    z-index: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .well, .jumbotron {
-    background: rgba(230, 230, 230, 0.9)
+    background: rgba(230, 230, 230, 0.9);
 }
 
 img {
     opacity: 1;
 }
 
-@-moz-keyframes cloudAnimation { to { left : 2000px; } }
-@-webkit-keyframes cloudAnimation { to { left : 2000px; } }
-@keyframes cloudAnimation { to { left : 2000px; } }
+@-moz-keyframes cloudAnimation {
+    from {
+        left: -400px;
+    }
+    to {
+        left: 2000px;
+    }
+}
+
+@-webkit-keyframes cloudAnimation {
+    from {
+        left: -400px;
+    }
+    to {
+        left: 2000px;
+    }
+}
+
+@keyframes cloudAnimation {
+    from {
+        left: -400px;
+    }
+    to {
+        left: 2000px;
+    }
+}
