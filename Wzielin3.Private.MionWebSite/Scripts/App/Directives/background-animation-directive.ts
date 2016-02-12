@@ -11,15 +11,17 @@
             var animateContainer = document.getElementById("background-animation-container");
             var drawElement = function () {
                 var animateElement = document.createElement("span");
-                animateElement.classList.add("background-animation-element");
-                animateElement.innerText = texts[Math.floor(Math.random() * texts.length)];
+                animateElement.classList.add("background-animation-element-look");
+                animateElement.innerHTML = texts[Math.floor(Math.random() * texts.length)];
                 animateElement.style.opacity = (Math.random() * 0.4 + 0.2).toString();
-                animateElement.style.top = (Math.random() * (window.innerHeight - 120) + 52).toString() + "px";
                 animateElement.style.fontSize = (Math.random() * 60 + 40).toString() + "px";
                 animateContainer.appendChild(animateElement);
-                
-                animateElement.style.left = (-animateElement.offsetWidth).toString() + "px";
+
+                animateElement.style.top = (Math.random() * (window.innerHeight - animateElement.offsetHeight - 52)+ 52).toString() + "px";
+                animateElement.style.left = (-animateElement.offsetWidth - Math.random()*100).toString() + "px";
                 animateElement.style.width = (animateElement.offsetWidth + 10).toString() + "px";
+
+                animateElement.classList.add("background-animation-element-animate");
 
                 setTimeout(drawElement, 2000);
                 setTimeout(removeElement, 60000, animateElement);
