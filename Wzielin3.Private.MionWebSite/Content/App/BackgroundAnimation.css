@@ -22,10 +22,10 @@
 }
 
 .background-animation-element-animate {
-    -moz-animation: cloudAnimation 60s linear;
-    -o-animation: cloudAnimation 60s linear;
-    -webkit-animation: cloudAnimation 60s linear;
-    animation: cloudAnimation 60s linear;
+    -moz-animation: cloudAnimation 600s linear forwards;
+    -o-animation: cloudAnimation 600s linear forwards;
+    -webkit-animation: cloudAnimation 600s linear forwards;
+    animation: cloudAnimation 600s linear forwards;
 }
 
 .well, .jumbotron {
@@ -34,18 +34,18 @@
 
 @-moz-keyframes cloudAnimation {
     to {
-        left: 2000px;
+        left: 20000px;
     }
 }
 
 @-webkit-keyframes cloudAnimation {
     to {
-        left: 2000px;
+        left: 20000px;
     }
 }
 
 @keyframes cloudAnimation {
     to {
-        left: 2000px;
+        left: 20000px;
     }
 }

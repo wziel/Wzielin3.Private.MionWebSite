@@ -11,7 +11,7 @@
             var animateContainer = document.getElementById("background-animation-container");
             var avrgFontSize = 70;
             var avrgTextMoveAwayTime = calculateAvrgTextMoveAwayTime();
-            var animationLengthMs = 60000;
+            var checkForRemovalIntervalMs = 21000;
             var drawElement = function () {
                 var animateElement = document.createElement("span");
                 animateElement.classList.add("background-animation-element-look");
@@ -26,14 +26,19 @@
 
                 animateElement.classList.add("background-animation-element-animate");
 
-                var nextElementIn = 2 * avrgTextMoveAwayTime * avrgFontSize / window.innerHeight;
-                setTimeout(drawElement, nextElementIn);
-                setTimeout(removeElement, animationLengthMs, animateElement);
+                var nextElementIntervalMs = 2 * avrgTextMoveAwayTime * avrgFontSize / window.innerHeight;
+                setTimeout(drawElement, nextElementIntervalMs);
+                setTimeout(checkForRemoval, checkForRemovalIntervalMs, animateElement);
             };
             drawElement();
 
-            function removeElement(element) {
-                animateContainer.removeChild(element);
+            function checkForRemoval(element: HTMLSpanElement) {
+                if (element.getBoundingClientRect().left >= window.outerWidth) {
+                    animateContainer.removeChild(element);
+                }
+                else {
+                    setTimeout(checkForRemoval, checkForRemovalIntervalMs, element);
+                }
             };
 
             ///calculate the average time in which texts moves it's whole length
