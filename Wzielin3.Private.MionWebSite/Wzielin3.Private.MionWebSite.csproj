@@ -26,6 +26,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="Data\Images\Icons\icon-facebook.png" />
+    <Content Include="Data\Images\Icons\icon-linkedin.png" />
+    <Content Include="Data\Images\Icons\icon-mail.png" />
     <Content Include="Data\Images\Personal\personal1.jpg" />
     <Content Include="Data\Images\Personal\personal2.jpg" />
     <Content Include="Data\Images\Personal\personal3.jpg" />
@@ -106,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App\app.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\about-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\education-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\index-controller.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\main-controller.ts" />
@@ -117,6 +121,7 @@
     <TypeScriptCompile Include="Scripts\App\helpers.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\education-models.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\navigation-models.ts" />
+    <TypeScriptCompile Include="Scripts\App\Models\personal-models.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\projects-models.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\education-factory.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\navigation-factory.ts" />

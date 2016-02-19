@@ -10,7 +10,7 @@ module App {
                 .config(['$routeProvider', function ($routeProvider) {
                 $routeProvider
                     .when('/home', { templateUrl: 'Views/Main.html', controller: 'MainController' })
-                    .when('/about', { templateUrl: 'Views/About.html' })
+                    .when('/about', { templateUrl: 'Views/About.html', controller: 'AboutController' })
                     .when('/projects', { templateUrl: 'Views/Projects.html', controller: 'ProjectsController' })
                     .when('/projects/:id', { templateUrl: 'Views/ProjectDetails.html', controller: 'ProjectDetailsController' })
                     .when('/education', { templateUrl: 'Views/Education.html', controller: 'EducationController' })
@@ -22,6 +22,7 @@ module App {
                 .controller("ProjectDetailsController", ['$scope', '$routeParams', '$location', 'projects', ($scope, $routeParams, $location, projects) => new Controllers.ProjectDetailsController($scope, $routeParams, $location, projects)])
                 .controller("ProjectsController", ["$scope", "projects", ($scope, projects) => new Controllers.ProjectsController($scope, projects)])
                 .controller("EducationController", ["$scope", "education", ($scope, education) => new Controllers.EducationController($scope, education)])
+                .controller("AboutController", ["$scope", "personal", ($scope, personal) => new Controllers.AboutController($scope, personal)])
                 .factory("education",() => new Services.EducationFactory())
                 .factory("projects",() => new Services.ProjectsFactory())
                 .factory("navigation", () => new Services.NavigationFactory())
