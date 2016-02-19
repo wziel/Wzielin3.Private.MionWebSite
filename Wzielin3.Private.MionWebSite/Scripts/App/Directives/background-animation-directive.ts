@@ -26,7 +26,7 @@
 
                 animateElement.classList.add("background-animation-element-animate");
 
-                var nextElementIntervalMs = 2 * avrgTextMoveAwayTime * avrgFontSize / window.innerHeight;
+                var nextElementIntervalMs = 3 * avrgTextMoveAwayTime * avrgFontSize / window.innerHeight;
                 setTimeout(drawElement, nextElementIntervalMs);
                 setTimeout(checkForRemoval, checkForRemovalIntervalMs, animateElement);
             };
@@ -47,7 +47,7 @@
                 var element = document.createElement("span");
                 element.classList.add("background-animation-element-look");
                 element.style.fontSize = avrgFontSize.toString() + "px";
-                element.style.opacity = "0";
+                element.style.visibility = "collapse";
                 document.body.appendChild(element);
                 for (var i = 0; i < texts.length; ++i) {
                     element.innerHTML = texts[i];
