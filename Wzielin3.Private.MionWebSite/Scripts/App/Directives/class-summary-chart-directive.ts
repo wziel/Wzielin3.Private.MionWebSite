@@ -1,35 +1,38 @@
 ﻿module App.Directives {
     "use strict";
     export class ClassSummaryChartDirective implements ng.IDirective {
-        public templateUrl = "Views/ClassSummaryChart.html";
+        private chartData: LinearChartData;
         public restrict = "AE";
         public scope = {
             classes: "="
         };
         public link =
         (scope: Scopes.IClassSummaryChartScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
+            var canvas = document.createElement("canvas");
+            //canvas.style.width = "100%";
+            element[0].appendChild(canvas);
+            var ctx = canvas.getContext("2d");
+            new Chart(ctx).Bar(this.chartData);
         };
         public controller = ($scope: Scopes.IClassSummaryChartScope) => {
-            $scope.chartData = new Services.Model.ClassSummaryChartModel();
-            $scope.chartData.data = [{
-                key: "Grades summary",
-                values: []
-            }];
-            var values = [];
-            for (var i = 2; i <= 5; i += 0.5) {
-                    values[i] = 0;
+            this.chartData = {
+                labels: ["2", "3", "3.5", "4", "4.5", "5"],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(100,100,220,0.5)",
+                    strokeColor: "rgba(100,100,220,0.8)",
+                    highlightFill: "rgba(100,100,220,0.75)",
+                    highlightStroke: "rgba(100,100,220,1)",
+                    data: [0, 0, 0, 0, 0, 0]
+                }]
             }
             for (var i = 0; i < $scope.classes.length; ++i) {
                 var currentGrade = $scope.classes[i].grade;
-                if (values[currentGrade] === undefined) {
-                    values[currentGrade] = 0;
-                }
-                values[currentGrade]++;
-            }
-            for (var i = 2; i <= 5; i += 0.5) {
-                $scope.chartData.data[0].values.push([i, values[i]]);
+                var index = currentGrade === 2 ? 0 : currentGrade * 2 - 5;
+                this.chartData.datasets[0].data[index]++;
             }
         }
+
 
         public static Factory() {
             var directive = () => {
@@ -45,15 +48,5 @@ module App.Directives.Scopes {
     "use strict";
     export interface IClassSummaryChartScope extends ng.IScope {
         classes: Models.Education.Classes[];
-        chartData: Services.Model.ClassSummaryChartModel;
-    }
-} 
-
-module App.Services.Model {
-    export class ClassSummaryChartModel {
-        data: {
-            key: string;
-            values: any[];
-        }[];
     }
 }
