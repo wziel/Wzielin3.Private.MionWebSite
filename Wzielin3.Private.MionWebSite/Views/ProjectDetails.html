@@ -1,12 +1,12 @@
 ﻿<h2>{{project.title}}</h2>
-<div class="jumbotron container">
+<div class="container well">
 
-    <div id="slides_control" class="container col-md-5">
-        <carousel interval="carousel.interval">
-            <slide ng-repeat="slide in carousel.slides">
+    <div id="slides_control" class="col-md-5">
+        <uib-carousel interval="carousel.interval">
+            <uib-slide ng-repeat="slide in carousel.slides">
                     <img ng-src="{{slide}}">
-            </slide>
-        </carousel>
+            </uib-slide>
+        </uib-carousel>
     </div>
 
     <div class="col-md-7">

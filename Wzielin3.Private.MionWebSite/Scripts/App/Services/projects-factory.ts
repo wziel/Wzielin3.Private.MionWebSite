@@ -49,7 +49,7 @@
                         main: "Data/Images/Projects/Proz/projects-proz3.png",
                         getAll: function () {
                             return ["Data/Images/Projects/Proz/projects-proz1.png", "Data/Images/Projects/Proz/projects-proz2.png",
-                                "Data/Images/Projects/Proz/projects-proz3.png", "Data/Images/Projects/Proz/projects-proz4.png"]
+                                "Data/Images/Projects/Proz/projects-proz3.png"]
                         }
                     },
                     githubLink: "https://github.com/wziel/Wzielin3.Proz.ChatRoom"

@@ -1,6 +1,6 @@
 ﻿<div class="well container">
-    <tabset justified="false">
-        <tab ng-repeat="school in education.schools" heading="{{school.name}}">
+    <uib-tabset justified="false">
+        <uib-tab ng-repeat="school in education.schools" heading="{{school.name}}">
             <div class="text-center">
                 <h2>{{school.name}}</h2>
                 <h4>{{school.faculty}}</h4>
@@ -17,6 +17,6 @@
             <hr />
             <semesters-accordion school="school"></semesters-accordion>
             <hr />
-        </tab>
-    </tabset>
+        </uib-tab>
+    </uib-tabset>
 </div>

@@ -1,6 +1,6 @@
-/*! angularjs-nvd3-directives - v0.0.8 - 2015-02-04
- * http://angularjs-nvd3-directives.github.io/angularjs-nvd3-directives
- * Copyright (c) 2015 Christian Maurer; Licensed Apache License, v2.0 */
+/*! angularjs-nvd3-directives - v0.0.7 - 2014-04-07
+ * http://cmaurer.github.io/angularjs-nvd3-directives
+ * Copyright (c) 2014 Christian Maurer; Licensed Apache License, v2.0 */
 ( function () {
   'use strict';
 
@@ -128,70 +128,72 @@
         };
       }
     };
-  } ).directive( 'nvd3Legend', [ function () {
-    var margin, width, height, id;
-    return {
-      restrict: 'EA',
-      scope: {
-        data: '=',
-        id: '@',
-        margin: '&',
-        width: '@',
-        height: '@',
-        key: '&',
-        color: '&',
-        align: '@',
-        rightalign: '@',
-        updatestate: '@',
-        radiobuttonmode: '@',
-        x: '&',
-        y: '&'
-      },
-      link: function ( scope, element, attrs ) {
-        scope.$watch( 'data', function ( data ) {
-          if ( data ) {
-            if ( scope.chart ) {
-              return d3.select( '#' + attrs.id + ' svg' ).attr( 'height', height ).attr( 'width', width ).datum( data ).transition().duration( 250 ).call( scope.chart );
-            }
-            margin = scope.$eval( attrs.margin ) || {
-              top: 5,
-              right: 0,
-              bottom: 5,
-              left: 0
-            };
-            width = attrs.width === undefined ? element[ 0 ].parentElement.offsetWidth - ( margin.left + margin.right ) : +attrs.width - ( margin.left + margin.right );
-            height = attrs.height === undefined ? element[ 0 ].parentElement.offsetHeight - ( margin.top + margin.bottom ) : +attrs.height - ( margin.top + margin.bottom );
-            if ( width === undefined || width < 0 ) {
-              width = 400;
-            }
-            if ( height === undefined || height < 0 ) {
-              height = 20;
-            }
-            if ( !attrs.id ) {
-              //if an id is not supplied, create a random id.
-              id = 'legend-' + Math.random();
-            } else {
-              id = attrs.id;
-            }
-            nv.addGraph( {
-              generate: function () {
-                var chart = nv.models.legend().width( width ).height( height ).margin( margin ).align( attrs.align === undefined ? true : attrs.align === 'true' ).rightAlign( attrs.rightalign === undefined ? true : attrs.rightalign === 'true' ).updateState( attrs.updatestate === undefined ? true : attrs.updatestate === 'true' ).radioButtonMode( attrs.radiobuttonmode === undefined ? false : attrs.radiobuttonmode === 'true' ).color( attrs.color === undefined ? nv.utils.defaultColor() : scope.color() ).key( attrs.key === undefined ? function ( d ) {
-                  return d.key;
-                } : scope.key() );
-                if ( !d3.select( '#' + attrs.id + ' svg' )[ 0 ][ 0 ] ) {
-                  d3.select( '#' + attrs.id ).append( 'svg' );
-                }
-                d3.select( '#' + attrs.id + ' svg' ).attr( 'height', height ).attr( 'width', width ).datum( data ).transition().duration( 250 ).call( chart );
-                nv.utils.windowResize( chart.update );
-                scope.chart = chart;
-                return chart;
+  } ).directive( 'nvd3Legend', [
+    function () {
+      var margin, width, height, id;
+      return {
+        restrict: 'EA',
+        scope: {
+          data: '=',
+          id: '@',
+          margin: '&',
+          width: '@',
+          height: '@',
+          key: '&',
+          color: '&',
+          align: '@',
+          rightalign: '@',
+          updatestate: '@',
+          radiobuttonmode: '@',
+          x: '&',
+          y: '&'
+        },
+        link: function ( scope, element, attrs ) {
+          scope.$watch( 'data', function ( data ) {
+            if ( data ) {
+              if ( scope.chart ) {
+                return d3.select( '#' + attrs.id + ' svg' ).attr( 'height', height ).attr( 'width', width ).datum( data ).transition().duration( 250 ).call( scope.chart );
               }
-            } );
-          }
-        } );
-      }
-    };
-  } ] );
+              margin = scope.$eval( attrs.margin ) || {
+                top: 5,
+                right: 0,
+                bottom: 5,
+                left: 0
+              };
+              width = attrs.width === undefined ? element[ 0 ].parentElement.offsetWidth - ( margin.left + margin.right ) : +attrs.width - ( margin.left + margin.right );
+              height = attrs.height === undefined ? element[ 0 ].parentElement.offsetHeight - ( margin.top + margin.bottom ) : +attrs.height - ( margin.top + margin.bottom );
+              if ( width === undefined || width < 0 ) {
+                width = 400;
+              }
+              if ( height === undefined || height < 0 ) {
+                height = 20;
+              }
+              if ( !attrs.id ) {
+                //if an id is not supplied, create a random id.
+                id = 'legend-' + Math.random();
+              } else {
+                id = attrs.id;
+              }
+              nv.addGraph( {
+                generate: function () {
+                  var chart = nv.models.legend().width( width ).height( height ).margin( margin ).align( attrs.align === undefined ? true : attrs.align === 'true' ).rightAlign( attrs.rightalign === undefined ? true : attrs.rightalign === 'true' ).updateState( attrs.updatestate === undefined ? true : attrs.updatestate === 'true' ).radioButtonMode( attrs.radiobuttonmode === undefined ? false : attrs.radiobuttonmode === 'true' ).color( attrs.color === undefined ? nv.utils.defaultColor() : scope.color() ).key( attrs.key === undefined ? function ( d ) {
+                    return d.key;
+                  } : scope.key() );
+                  if ( !d3.select( '#' + attrs.id + ' svg' )[ 0 ][ 0 ] ) {
+                    d3.select( '#' + attrs.id ).append( 'svg' );
+                  }
+                  d3.select( '#' + attrs.id + ' svg' ).attr( 'height', height ).attr( 'width', width ).datum( data ).transition().duration( 250 ).call( chart );
+                  nv.utils.windowResize( chart.update );
+                  scope.chart = chart;
+                  return chart;
+                }
+              } );
+            }
+          } );
+        }
+      };
+    }
+  ] );
 
   function initializeLegendMargin( scope, attrs ) {
     var margin = ( scope.$eval( attrs.legendmargin ) || {
@@ -311,7 +313,7 @@
       } );
 
       chart.discretebar.dispatch.on( 'elementMouseout.tooltip.directive', function ( event ) {
-        scope.$emit( 'elementMouseout.tooltip.directive', event );
+        scope.$emit( 'elementMouseover.tooltip.directive', event );
       } );
 
       chart.discretebar.dispatch.on( 'elementClick.directive', function ( event ) {
@@ -325,7 +327,7 @@
       } );
 
       chart.multibar.dispatch.on( 'elementMouseout.tooltip.directive', function ( event ) {
-        scope.$emit( 'elementMouseout.tooltip.directive', event );
+        scope.$emit( 'elementMouseover.tooltip.directive', event );
       } );
 
       chart.multibar.dispatch.on( 'elementClick.directive', function ( event ) {
@@ -340,7 +342,7 @@
       } );
 
       chart.pie.dispatch.on( 'elementMouseout.tooltip.directive', function ( event ) {
-        scope.$emit( 'elementMouseout.tooltip.directive', event );
+        scope.$emit( 'elementMouseover.tooltip.directive', event );
       } );
 
       chart.pie.dispatch.on( 'elementClick.directive', function ( event ) {
@@ -354,7 +356,7 @@
       } );
 
       chart.scatter.dispatch.on( 'elementMouseout.tooltip.directive', function ( event ) {
-        scope.$emit( 'elementMouseout.tooltip.directive', event );
+        scope.$emit( 'elementMouseover.tooltip.directive', event );
       } );
     }
 
@@ -364,7 +366,7 @@
       } );
 
       chart.bullet.dispatch.on( 'elementMouseout.tooltip.directive', function ( event ) {
-        scope.$emit( 'elementMouseout.tooltip.directive', event );
+        scope.$emit( 'elementMouseover.tooltip.directive', event );
       } );
     }
 
@@ -764,22 +766,6 @@
     scope.margin = margin;
   }
 
-  function getD3Selector( attrs, element ) {
-    if ( !attrs.id ) {
-      //if an id is not supplied, create a random id.
-      var dataAttributeChartID;
-      if ( !attrs[ 'data-chartid' ] ) {
-        dataAttributeChartID = 'chartid' + Math.floor( Math.random() * 1000000001 );
-        angular.element( element ).attr( 'data-chartid', dataAttributeChartID );
-      } else {
-        dataAttributeChartID = attrs[ 'data-chartid' ];
-      }
-      return '[data-chartid=' + dataAttributeChartID + ']';
-    } else {
-      return '#' + attrs.id;
-    }
-  }
-
   function checkElementID( scope, attrs, element, chart, data ) {
     configureXaxis( chart, scope, attrs );
     configureX2axis( chart, scope, attrs );
@@ -788,34 +774,33 @@
     configureY2axis( chart, scope, attrs );
     configureLegend( chart, scope, attrs );
     processEvents( chart, scope );
-    var d3Select = getD3Selector( attrs, element );
-    if ( angular.isArray( data ) && data.length === 0 ) {
-      d3.select( d3Select + ' svg' ).remove();
-    }
-    if ( d3.select( d3Select + ' svg' ).empty() ) {
-      d3.select( d3Select ).append( 'svg' );
-    }
-    d3.select( d3Select + ' svg' ).attr( 'viewBox', '0 0 ' + scope.width + ' ' + scope.height ).datum( data ).transition().duration( attrs.transitionduration === undefined ? 250 : +attrs.transitionduration ).call( chart );
-  }
-
-  function updateDimensions( scope, attrs, element, chart ) {
-    if ( chart ) {
-      chart.width( scope.width ).height( scope.height );
-      var d3Select = getD3Selector( attrs, element );
-      d3.select( d3Select + ' svg' ).attr( 'viewBox', '0 0 ' + scope.width + ' ' + scope.height );
-      nv.utils.windowResize( chart );
-      scope.chart.update();
+    var dataAttributeChartID;
+    //randomly generated if id attribute doesn't exist
+    if ( !attrs.id ) {
+      dataAttributeChartID = 'chartid' + Math.floor( Math.random() * 1000000001 );
+      angular.element( element ).attr( 'data-chartid', dataAttributeChartID );
+      //if an id is not supplied, create a random id.
+      if ( d3.select( '[data-chartid=' + dataAttributeChartID + '] svg' ).empty() ) {
+        d3.select( '[data-chartid=' + dataAttributeChartID + ']' ).append( 'svg' ).attr( 'height', scope.height ).attr( 'width', scope.width ).datum( data ).transition().duration( attrs.transitionduration === undefined ? 250 : +attrs.transitionduration ).call( chart );
+      } else {
+        d3.select( '[data-chartid=' + dataAttributeChartID + '] svg' ).attr( 'height', scope.height ).attr( 'width', scope.width ).datum( data ).transition().duration( attrs.transitionduration === undefined ? 250 : +attrs.transitionduration ).call( chart );
+      }
+    } else {
+      if ( angular.isArray( data ) && data.length === 0 ) {
+        d3.select( '#' + attrs.id + ' svg' ).remove();
+      }
+      if ( d3.select( '#' + attrs.id + ' svg' ).empty() ) {
+        d3.select( '#' + attrs.id ).append( 'svg' );
+      }
+      d3.select( '#' + attrs.id + ' svg' ).attr( 'height', scope.height ).attr( 'width', scope.width ).datum( data ).transition().duration( attrs.transitionduration === undefined ? 250 : +attrs.transitionduration ).call( chart );
     }
   }
   angular.module( 'nvd3ChartDirectives', [] ).directive( 'nvd3LineChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -901,13 +886,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -925,7 +904,7 @@
                   } : function () {
                     return attrs.isarea === 'true';
                   } );
-                  if ( attrs.useinteractiveguideline ) {
+                  if ( chart.useInteractiveGuideline ) {
                     chart.useInteractiveGuideline( attrs.useinteractiveguideline === undefined ? false : attrs.useinteractiveguideline === 'true' );
                   }
                   if ( attrs.tooltipcontent ) {
@@ -944,14 +923,11 @@
       };
     }
   ] ).directive( 'nvd3CumulativeLineChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -1039,13 +1015,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -1064,7 +1034,7 @@
                     return d.area;
                   } : attrs.isarea === 'true' );
                   //.rescaleY(attrs.rescaley === undefined ? false : (attrs.rescaley === 'true'));
-                  if ( attrs.useinteractiveguideline ) {
+                  if ( chart.useInteractiveGuideline ) {
                     chart.useInteractiveGuideline( attrs.useinteractiveguideline === undefined ? false : attrs.useinteractiveguideline === 'true' );
                   }
                   if ( attrs.tooltipcontent ) {
@@ -1083,14 +1053,11 @@
       };
     }
   ] ).directive( 'nvd3StackedAreaChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -1186,13 +1153,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -1208,7 +1169,7 @@
                   } : scope.y() ).forceX( attrs.forcex === undefined ? [] : scope.$eval( attrs.forcex ) ).forceY( attrs.forcey === undefined ? [ 0 ] : scope.$eval( attrs.forcey ) ).size( attrs.size === undefined ? function ( d ) {
                     return d.size === undefined ? 1 : d.size;
                   } : scope.size() ).forceSize( attrs.forcesize === undefined ? [] : scope.$eval( attrs.forcesize ) ).showLegend( attrs.showlegend === undefined ? false : attrs.showlegend === 'true' ).showControls( attrs.showcontrols === undefined ? false : attrs.showcontrols === 'true' ).showXAxis( attrs.showxaxis === undefined ? false : attrs.showxaxis === 'true' ).showYAxis( attrs.showyaxis === undefined ? false : attrs.showyaxis === 'true' ).tooltips( attrs.tooltips === undefined ? false : attrs.tooltips === 'true' ).noData( attrs.nodata === undefined ? 'No Data Available.' : scope.nodata ).interactive( attrs.interactive === undefined ? false : attrs.interactive === 'true' ).clipEdge( attrs.clipedge === undefined ? false : attrs.clipedge === 'true' ).color( attrs.color === undefined ? nv.utils.defaultColor() : scope.color() );
-                  if ( attrs.useinteractiveguideline ) {
+                  if ( chart.useInteractiveGuideline ) {
                     chart.useInteractiveGuideline( attrs.useinteractiveguideline === undefined ? false : attrs.useinteractiveguideline === 'true' );
                   }
                   if ( attrs.usevoronoi ) {
@@ -1265,14 +1226,11 @@
       };
     }
   ] ).directive( 'nvd3MultiBarChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -1355,13 +1313,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -1391,14 +1343,11 @@
       };
     }
   ] ).directive( 'nvd3DiscreteBarChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -1477,13 +1426,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -1516,14 +1459,11 @@
       };
     }
   ] ).directive( 'nvd3HistoricalBarChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -1605,13 +1545,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -1625,7 +1559,7 @@
                   } : scope.x() ).y( attrs.y === undefined ? function ( d ) {
                     return d[ 1 ];
                   } : scope.y() ).forceY( attrs.forcey === undefined ? [ 0 ] : scope.$eval( attrs.forcey ) ).tooltips( attrs.tooltips === undefined ? false : attrs.tooltips === 'true' ).noData( attrs.nodata === undefined ? 'No Data Available.' : scope.nodata ).interactive( attrs.interactive === undefined ? false : attrs.interactive === 'true' ).color( attrs.color === undefined ? nv.utils.defaultColor() : scope.color() );
-                  if ( attrs.useinteractiveguideline ) {
+                  if ( chart.useInteractiveGuideline ) {
                     chart.useInteractiveGuideline( attrs.useinteractiveguideline === undefined ? false : attrs.useinteractiveguideline === 'true' );
                   }
                   if ( attrs.tooltipcontent ) {
@@ -1647,14 +1581,11 @@
       };
     }
   ] ).directive( 'nvd3MultiBarHorizontalChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -1733,13 +1664,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -1772,14 +1697,11 @@
       };
     }
   ] ).directive( 'nvd3PieChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -1824,13 +1746,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -1862,14 +1778,11 @@
       };
     }
   ] ).directive( 'nvd3ScatterChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -1969,13 +1882,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -2044,99 +1951,15 @@
       };
     }
   ] ).directive( 'nvd3ScatterPlusLineChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
-          showlegend: '@',
-          tooltips: '@',
-          showcontrols: '@',
-          showDistX: '@',
-          showDistY: '@',
-          rightAlignYAxis: '@',
-          fisheye: '@',
-          tooltipContent: '&',
-          tooltipXContent: '&',
-          tooltipYContent: '&',
-          color: '&',
-          margin: '&',
-          nodata: '@',
-          transitionDuration: '@',
-          shape: '&',
-          onlyCircles: '@',
-          interactive: '@',
-          x: '&',
-          y: '&',
-          size: '&',
-          forceX: '@',
-          forceY: '@',
-          forceSize: '@',
-          xrange: '&',
-          xdomain: '&',
-          xscale: '&',
-          yrange: '&',
-          ydomain: '&',
-          yscale: '&',
-          sizerange: '&',
-          sizedomain: '&',
-          zscale: '&',
-          callback: '&',
-          xaxisorient: '&',
-          xaxisticks: '&',
-          xaxistickvalues: '&xaxistickvalues',
-          xaxisticksubdivide: '&',
-          xaxisticksize: '&',
-          xaxistickpadding: '&',
-          xaxistickformat: '&',
-          xaxislabel: '@',
-          xaxisscale: '&',
-          xaxisdomain: '&',
-          xaxisrange: '&',
-          xaxisrangeband: '&',
-          xaxisrangebands: '&',
-          xaxisshowmaxmin: '@',
-          xaxishighlightzero: '@',
-          xaxisrotatelabels: '@',
-          xaxisrotateylabel: '@',
-          xaxisstaggerlabels: '@',
-          xaxisaxislabeldistance: '@',
-          yaxisorient: '&',
-          yaxisticks: '&',
-          yaxistickvalues: '&yaxistickvalues',
-          yaxisticksubdivide: '&',
-          yaxisticksize: '&',
-          yaxistickpadding: '&',
-          yaxistickformat: '&',
-          yaxislabel: '@',
-          yaxisscale: '&',
-          yaxisdomain: '&',
-          yaxisrange: '&',
-          yaxisrangeband: '&',
-          yaxisrangebands: '&',
-          yaxisshowmaxmin: '@',
-          yaxishighlightzero: '@',
-          yaxisrotatelabels: '@',
-          yaxisrotateylabel: '@',
-          yaxisstaggerlabels: '@',
-          yaxislabeldistance: '@',
-          legendmargin: '&',
-          legendwidth: '@',
-          legendheight: '@',
-          legendkey: '@',
-          legendcolor: '&',
-          legendalign: '@',
-          legendrightalign: '@',
-          legendupdatestate: '@',
-          legendradiobuttonmode: '@',
-          objectequality: '@',
-          transitionduration: '@'
+          callback: '&'
         },
         controller: [
           '$scope',
@@ -2149,13 +1972,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               if ( scope.chart ) {
                 return scope.d3Call( data, scope.chart );
@@ -2173,7 +1990,7 @@
                     return '<strong>' + x + '</strong>';
                   } : scope.tooltipXContent() ).tooltipYContent( attrs.tooltipycontent === undefined ? function ( key, x, y ) {
                     return '<strong>' + y + '</strong>';
-                  } : scope.tooltipYContent() ).showControls( attrs.showcontrols === undefined ? false : attrs.showcontrols === 'true' ).showLegend( attrs.showlegend === undefined ? false : attrs.showlegend === 'true' ).showDistX( attrs.showdistx === undefined ? false : attrs.showdistx === 'true' ).showDistY( attrs.showdisty === undefined ? false : attrs.showdisty === 'true' ).fisheye( attrs.fisheye === undefined ? 0 : +attrs.fisheye ).noData( attrs.nodata === undefined ? 'No Data Available.' : scope.nodata ).color( attrs.color === undefined ? nv.utils.defaultColor() : scope.color() ).transitionDuration( attrs.transitionduration === undefined ? 250 : +attrs.transitionduration );
+                  } : scope.tooltipYContent() ).showControls( attrs.showcontrols === undefined ? false : attrs.showcontrols === 'true' ).showLegend( attrs.showlegend === undefined ? false : attrs.showlegend === 'true' ).showDistX( attrs.showdistx === undefined ? false : attrs.showdistx === 'true' ).showDistY( attrs.showdisty === undefined ? false : attrs.showdisty === 'true' ).xPadding( attrs.xpadding === undefined ? 0 : +attrs.xpadding ).yPadding( attrs.ypadding === undefined ? 0 : +attrs.ypadding ).fisheye( attrs.fisheye === undefined ? 0 : +attrs.fisheye ).noData( attrs.nodata === undefined ? 'No Data Available.' : scope.nodata ).color( attrs.color === undefined ? nv.utils.defaultColor() : scope.color() ).transitionDuration( attrs.transitionduration === undefined ? 250 : +attrs.transitionduration );
                   if ( attrs.shape ) {
                     chart.scatter.onlyCircles( false );
                     chart.scatter.shape( attrs.shape === undefined ? function ( d ) {
@@ -2193,14 +2010,11 @@
       };
     }
   ] ).directive( 'nvd3LinePlusBarChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -2289,9 +2103,7 @@
           legendupdatestate: '@',
           legendradiobuttonmode: '@',
           objectequality: '@',
-          transitionduration: '@',
-          lineinteractive: '@',
-          barinteractive: '@'
+          transitionduration: '@'
         },
         controller: [
           '$scope',
@@ -2304,13 +2116,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -2335,12 +2141,6 @@
                   if ( attrs.tooltipcontent ) {
                     chart.tooltipContent( scope.tooltipcontent() );
                   }
-                  if ( attrs.lineinteractive && attrs.lineinteractive === 'false' ) {
-                    chart.lines.interactive( false );
-                  }
-                  if ( attrs.barinteractive && attrs.barinteractive === 'false' ) {
-                    chart.bars.interactive( false );
-                  }
                   scope.d3Call( data, chart );
                   nv.utils.windowResize( chart.update );
                   scope.chart = chart;
@@ -2354,14 +2154,11 @@
       };
     }
   ] ).directive( 'nvd3LineWithFocusChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           height2: '@',
@@ -2486,13 +2283,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -2538,7 +2329,7 @@
                     return attrs.isarea === 'true';
                   } ).size( attrs.size === undefined ? function ( d ) {
                     return d.size === undefined ? 1 : d.size;
-                  } : scope.size() ).interactive( attrs.interactive === undefined ? false : attrs.interactive === 'true' ).clipEdge( attrs.clipedge === undefined ? false : attrs.clipedge === 'true' ).clipVoronoi( attrs.clipvoronoi === undefined ? false : attrs.clipvoronoi === 'true' ).interpolate( attrs.interpolate === undefined ? 'linear' : attrs.interpolate );
+                  } : scope.size() ).interactive( attrs.interactive === undefined ? false : attrs.interactive === 'true' ).interpolate( attrs.interpolate === undefined ? 'linear' : attrs.interpolate );
                   if ( attrs.defined ) {
                     chart.defined( scope.defined() );
                   }
@@ -2558,14 +2349,11 @@
       };
     }
   ] ).directive( 'nvd3BulletChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -2593,13 +2381,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -2625,14 +2407,11 @@
       };
     }
   ] ).directive( 'nvd3SparklineChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       return {
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -2663,13 +2442,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {
@@ -2702,8 +2475,7 @@
       };
     }
   ] ).directive( 'nvd3SparklineWithBandlinesChart', [
-    '$filter',
-    function ( $filter ) {
+    function () {
       /**
        * http://www.perceptualedge.com/articles/visual_business_intelligence/introducing_bandlines.pdf
        * You need five primary facts about a set of time-series values to construct a bandline:
@@ -2717,8 +2489,6 @@
         restrict: 'EA',
         scope: {
           data: '=',
-          filtername: '=',
-          filtervalue: '=',
           width: '@',
           height: '@',
           id: '@',
@@ -2790,13 +2560,7 @@
           }
         ],
         link: function ( scope, element, attrs ) {
-          scope.$watch( 'width + height', function () {
-            updateDimensions( scope, attrs, element, scope.chart );
-          } );
           scope.$watch( 'data', function ( data ) {
-            if ( data && angular.isDefined( scope.filtername ) && angular.isDefined( scope.filtervalue ) ) {
-              data = $filter( scope.filtername )( data, scope.filtervalue );
-            }
             if ( data ) {
               //if the chart exists on the scope, do not call addGraph again, update data and call the chart.
               if ( scope.chart ) {

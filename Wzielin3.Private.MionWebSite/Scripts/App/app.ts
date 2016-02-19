@@ -6,7 +6,7 @@ module App {
         private app: ng.IModule;
 
         public start() {
-            this.app = angular.module("main", ['ngRoute', 'ui.bootstrap', 'nvd3ChartDirectives'])
+            this.app = angular.module("main", ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'nvd3ChartDirectives'])
                 .config(['$routeProvider', function ($routeProvider) {
                 $routeProvider
                     .when('/home', { templateUrl: 'Views/Main.html', controller: 'MainController' })

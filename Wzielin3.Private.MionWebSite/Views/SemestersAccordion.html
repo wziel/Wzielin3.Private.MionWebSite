@@ -12,11 +12,11 @@
             <input class="form-control" ng-model="filterValue" placeholder="Filter" />
         </div>
     </div>
-    <div collapse="!showChartMain">
+    <div uib-collapse="!showChartMain">
         <class-summary classes="allClasses"></class-summary>
     </div>
-    <accordion close-others="false">
-        <accordion-group ng-repeat="semester in school.semesters"  heading="{{getSemesterHeading(semester)}}"
+    <uib-accordion close-others="false">
+        <uib-accordion-group ng-repeat="semester in school.semesters"  heading="{{getSemesterHeading(semester)}}"
                          is-open="showAccordion[$index]" class="row">
             <div ng-repeat="class in semester.classes | filter:filterValue" class="container">
                 <div class="col-md-6 col-xs-10">{{class.name}}</div>
@@ -29,10 +29,10 @@
                     <span ng-hide="showChart[$index]">Show grades summary chart</span>
                     <span ng-show="showChart[$index]">Hide grades summary chart</span>
                 </button>
-                <div collapse="!showChart[$index]">
+                <div uib-collapse="!showChart[$index]">
                     <class-summary classes="semester.classes"></class-summary>
                 </div>
             </div>
-        </accordion-group>
-    </accordion>
+        </uib-accordion-group>
+    </uib-accordion>
 </div>
