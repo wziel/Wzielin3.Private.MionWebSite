@@ -8,7 +8,17 @@ module App.Models.Projects {
         images: {
             main: string;
             getAll(): string[];
-        }
-        githubLink: string
+        };
+        externalLinks: ExternalLink[];
+    }
+
+    export class ExternalLink {
+        url: string;
+        source: ExternalSource;
+    }
+
+    export class ExternalSource {
+        thumbnailUrl: string;
+        displayText: string;
     }
 }

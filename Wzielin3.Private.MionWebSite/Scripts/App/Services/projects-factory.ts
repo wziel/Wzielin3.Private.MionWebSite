@@ -2,14 +2,18 @@
     "use strict";
 
     export class ProjectsFactory {
-        public getById(id: number): App.Models.Projects.Project{
+        private github: Models.Projects.ExternalSource = {
+            displayText: "Check out the repository on github.",
+            thumbnailUrl: "Data/Images/Icons/icon-github.png",
+        }
+        public getById(id: number): App.Models.Projects.Project {
             var projects = this.getAll();
             if (id < 0 || id >= projects.length) {
                 return null;
             }
             return projects[id];
         }
-        public getAll(): App.Models.Projects.Project[]{
+        public getAll(): App.Models.Projects.Project[] {
             return [
                 {
                     id: 0,
@@ -23,7 +27,10 @@
                                 "Data/Images/Projects/Gkom/projects-gkom3.jpg", "Data/Images/Projects/Gkom/projects-gkom4.jpg"]
                         }
                     },
-                    githubLink: "https://github.com/wziel/Wzielin3.Gkom.Pacman"
+                    externalLinks: [{
+                        source: this.github,
+                        url: "https://github.com/wziel/Wzielin3.Gkom.Pacman",
+                    }],
                 },
                 {
                     id: 1,
@@ -38,7 +45,10 @@
                                 "Data/Images/Projects/MEANApp/projects-meanapp5.png", "Data/Images/Projects/MEANApp/projects-meanapp6.png"]
                         }
                     },
-                    githubLink: "https://github.com/wziel/Impaq.Wziel.MeanApp"
+                    externalLinks: [{
+                        source: this.github,
+                        url: "https://github.com/wziel/Impaq.Wziel.MeanApp"
+                    }],
                 },
                 {
                     id: 2,
@@ -52,7 +62,10 @@
                                 "Data/Images/Projects/Proz/projects-proz3.png"]
                         }
                     },
-                    githubLink: "https://github.com/wziel/Wzielin3.Proz.ChatRoom"
+                    externalLinks: [{
+                        source: this.github,
+                        url: "https://github.com/wziel/Wzielin3.Proz.ChatRoom"
+                    }],
                 },
                 {
                     id: 3,
@@ -66,7 +79,10 @@
                                 "Data/Images/Projects/OI/projects-oi2.png", "Data/Images/Projects/OI/projects-oi3.png"]
                         }
                     },
-                    githubLink: "https://github.com/wziel/Wzielin3.Private.OlimpiadaInformatyczna"
+                    externalLinks: [{
+                        source: this.github,
+                        url: "https://github.com/wziel/Wzielin3.Private.OlimpiadaInformatyczna"
+                    }],
                 },
                 {
                     id: 4,
@@ -80,7 +96,10 @@
                                 "Data/Images/Projects/WebSite/projects-website2.png"]
                         }
                     },
-                    githubLink: "https://github.com/wziel/Wzielin3.Private.MionWebSite"
+                    externalLinks: [{
+                        source: this.github,
+                        url: "https://github.com/wziel/Wzielin3.Private.MionWebSite"
+                    }],
                 },
             ];
         }

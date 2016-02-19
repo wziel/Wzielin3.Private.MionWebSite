@@ -27,6 +27,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Data\Images\Icons\icon-facebook.png" />
+    <Content Include="Data\Images\Icons\icon-github.png" />
     <Content Include="Data\Images\Icons\icon-linkedin.png" />
     <Content Include="Data\Images\Icons\icon-mail.png" />
     <Content Include="Data\Images\Personal\personal1.jpg" />

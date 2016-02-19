@@ -10,10 +10,10 @@
 
     <div class="col-md-7">
         <div>{{project.description}}</div>
-        <div ng-show="project.githubLink !== null" style="margin-top:10px">
-            <a href="{{project.githubLink}}" target="_blank">
-                <img src="https://github.com/favicon.ico" />
-                Check out the repository on github.
+        <div ng-repeat="link in project.externalLinks" style="margin-top:10px">
+            <a href="{{link.url}}" target="_blank">
+                <img src="{{link.source.thumbnailUrl}}" />
+                {{link.source.displayText}}
             </a>
         </div>
 
