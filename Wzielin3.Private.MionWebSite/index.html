@@ -9,7 +9,6 @@
 
     <link href="Content/App/index.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/nv.d3.css" rel="stylesheet" />
 
     <script type="text/javascript" src="Scripts/angular.min.js"></script>
     <script type="text/javascript" src="Scripts/angular-route.min.js"></script>
@@ -38,16 +37,22 @@
 </head>
 <body ng-app="main" ng-controller="IndexController">
     <background-animation></background-animation>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#/home">Wojciech Zieliński</a>
-        </div>
 
-        <div id="navigation-main">
-            <ul class="nav navbar-nav">
-                <li ng-repeat="nav in navigation" data-ng-class="{active : activeViewPath==='{{nav.path}}' }"><a href='#{{nav.path}}'>{{nav.displayName}}</a></li>
-            </ul>
-        </div>
+    <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" ng-click="isCollapsed = !isCollapsed"> 
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Wojciech Zieliński</a>
+            </div>
+            <div class="collapse navbar-collapse" uib-collapse="!isCollapsed">
+                <ul class="nav navbar-nav">
+                    <li ng-repeat="nav in navigation" data-ng-class="{active : activeViewPath==='{{nav.path}}' }"><a href='#{{nav.path}}'>{{nav.displayName}}</a></li>
+                </ul>
+            </div>
     </nav>
 
     <div class="container" ng-view></div>

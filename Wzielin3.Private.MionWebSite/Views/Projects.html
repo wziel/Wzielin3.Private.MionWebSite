@@ -2,8 +2,8 @@
     <div class="row">
         <div ng-repeat="project in projects" class="container well">
             <h3>{{project.title}}</h3>
-            <img src="{{project.images.main}}" alt="{{project.title}}" class="col-md-4" style="padding-left:0px" />
-            <div class="col-md-8" style="padding-left:0">
+            <img src="{{project.images.main}}" alt="{{project.title}}" class="col-md-4 col-xs-12" style="padding-left:0px" />
+            <div class="col-md-8 col-xs-12" style="padding-left:0">
                 <div class="hidden-xs hidden-sm">{{project.description}}</div>
                 <div class="hidden-lg hidden-md hidden-print">{{project.description | limitTo: 200}}...</div>
                 <div><a href="{{project.path}}">See more...</a></div>
