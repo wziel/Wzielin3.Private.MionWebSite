@@ -26,7 +26,7 @@
             }
 
             for (var i = 0; i < $scope.school.semesters.length; ++i) {
-                $scope.showAccordion.push(false);
+                $scope.showAccordion.push(true);
                 $scope.showChart.push(false);
             }
 

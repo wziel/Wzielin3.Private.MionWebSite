@@ -9,7 +9,8 @@
         public link =
         (scope: Scopes.IClassSummaryChartScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
             var canvas = document.createElement("canvas");
-            //canvas.style.width = "100%";
+            canvas.style.width = "100%";
+            canvas.className = "chart";
             element[0].appendChild(canvas);
             var ctx = canvas.getContext("2d");
             new Chart(ctx).Bar(this.chartData);

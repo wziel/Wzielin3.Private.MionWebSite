@@ -1,2 +1,5 @@
-﻿body {
+﻿canvas.chart {
+width: 100% !important;
+max-width: 1170px;
+height: auto !important;
 }
