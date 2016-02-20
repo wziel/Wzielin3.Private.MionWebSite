@@ -7,7 +7,7 @@
         public link = (scope: Scopes.IBackgroundAnimationScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => { };
         public controller = ($scope: Scopes.IBackgroundAnimationScope) => {
             var texts = [".NET", "C#", "SharePoint", "JavaScript", "TypeScript", "HTML", "CSS", "AngularJS", "ASP.NET",
-                "Visual Studio", "GIT", "TFS", "Windows", "MVC"]
+                "Visual Studio", "GIT", "TFS", "Windows", "MVC", "Algorithms"]
             var animateContainer = document.getElementById("background-animation-container");
             var avrgFontSize = 70;
             var avrgTextMoveAwayTime = calculateAvrgTextMoveAwayTime();

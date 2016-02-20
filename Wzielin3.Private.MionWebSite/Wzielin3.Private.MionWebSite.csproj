@@ -37,6 +37,8 @@
     <Content Include="Data\Images\Personal\personal5.jpg" />
     <Content Include="Data\Images\Personal\personal6.jpg" />
     <Content Include="Data\Images\Personal\personal7.jpg" />
+    <Content Include="Data\Images\Projects\BD2\projects-bd2-1.png" />
+    <Content Include="Data\Images\Projects\BD2\projects-bd2-2.png" />
     <Content Include="Data\Images\Projects\Gkom\projects-gkom1.jpg" />
     <Content Include="Data\Images\Projects\Gkom\projects-gkom2.jpg" />
     <Content Include="Data\Images\Projects\Gkom\projects-gkom3.jpg" />
