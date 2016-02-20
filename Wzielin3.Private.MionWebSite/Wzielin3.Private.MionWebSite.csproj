@@ -53,6 +53,12 @@
     <Content Include="Data\Images\Projects\Proz\projects-proz1.png" />
     <Content Include="Data\Images\Projects\Proz\projects-proz2.png" />
     <Content Include="Data\Images\Projects\Proz\projects-proz3.png" />
+    <Content Include="Data\Images\Projects\TIN\projects-tin1.png" />
+    <Content Include="Data\Images\Projects\TIN\projects-tin2.png" />
+    <Content Include="Data\Images\Projects\TIN\projects-tin3.png" />
+    <Content Include="Data\Images\Projects\TIN\projects-tin4.png" />
+    <Content Include="Data\Images\Projects\TIN\projects-tin5.png" />
+    <Content Include="Data\Images\Projects\TIN\projects-tin6.png" />
     <Content Include="Data\Images\Projects\WebSite\projects-website1.png" />
     <Content Include="Data\Images\Projects\WebSite\projects-website2.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

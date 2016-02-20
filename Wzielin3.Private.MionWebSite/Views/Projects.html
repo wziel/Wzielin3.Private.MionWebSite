@@ -4,8 +4,14 @@
             <h3>{{project.title}}</h3>
             <img src="{{project.images.main}}" alt="{{project.title}}" class="col-md-4 col-xs-12" style="padding-left:0px" />
             <div class="col-md-8 col-xs-12" style="padding-left:0">
-                <div class="hidden-xs hidden-sm">{{project.description}}</div>
-                <div class="hidden-lg hidden-md hidden-print">{{project.description | limitTo: 200}}...</div>
+                <div class="hidden-xs hidden-sm">
+                    <span>{{project.description | limitTo: 900}}</span>
+                    <span ng-show="project.description.length > 900">...</span>
+                </div>
+                <div class="hidden-lg hidden-md hidden-print">
+                    <span>{{project.description | limitTo: 200}}...</span>
+                    <span ng-show="project.description.length > 200">...</span>
+                </div>
                 <div><a href="{{project.path}}">See more...</a></div>
             </div>
         </div>
