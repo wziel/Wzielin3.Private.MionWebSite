@@ -6,6 +6,35 @@
             displayText: "Check out the repository on github.",
             thumbnailUrl: "Data/Images/Icons/icon-github.png",
         }
+        private tags = {
+            algorithms: "Algorithms",
+            angularjs: "AngularJS",
+            bootstrap: "Bootstrap",
+            cpp: "C++",
+            csharp: "C#",
+            css: "CSS",
+            dotnet: ".NET",
+            entityframework: "Entity Framework",
+            graphics: "Graphics",
+            html: "HTML",
+            java: "Java",
+            javascript: "Javascript",
+            mongodb: "MongoDB",
+            nodejs: "Node.JS",
+            sql: "SQL",
+            teamproject: "Team Project",
+            typescript: "Typescript",
+            visualstudio: "Visual Studio",
+            wpf: "WPF",
+        }
+        public getAllTags() {
+            var returns: string[] = [];
+            for (var property in this.tags) {
+                returns.push(this.tags[property]);
+            }
+            return returns;
+        }
+
         public getById(id: number): App.Models.Projects.Project {
             var projects = this.getAll();
             if (id < 0 || id >= projects.length) {
@@ -31,6 +60,7 @@
                         source: this.github,
                         url: "https://github.com/wziel/Wzielin3.Gkom.Pacman",
                     }],
+                    tags: [this.tags.cpp, this.tags.graphics, this.tags.visualstudio]
                 },
                 {
                     id: 1,
@@ -49,6 +79,7 @@
                         source: this.github,
                         url: "https://github.com/wziel/Impaq.Wziel.MeanApp"
                     }],
+                    tags: [this.tags.angularjs, this.tags.bootstrap, this.tags.css, this.tags.html, this.tags.javascript, this.tags.mongodb, this.tags.nodejs, this.tags.visualstudio]
                 },
                 {
                     id: 2,
@@ -67,6 +98,7 @@
                         source: this.github,
                         url: "https://github.com/wziel/Pw.Elka.TIN"
                     }],
+                    tags: [this.tags.cpp, this.tags.csharp, this.tags.dotnet, this.tags.sql, this.tags.teamproject, this.tags.visualstudio, this.tags.wpf]
                 },
                 {
                     id: 3,
@@ -83,6 +115,7 @@
                         source: this.github,
                         url: "https://github.com/wziel/Pw.Elka.Bd2"
                     }],
+                    tags: [this.tags.csharp, this.tags.dotnet, this.tags.entityframework, this.tags.sql, this.tags.teamproject, this.tags.visualstudio]
                 },
                 {
                     id: 4,
@@ -100,6 +133,7 @@
                         source: this.github,
                         url: "https://github.com/wziel/Wzielin3.Proz.ChatRoom"
                     }],
+                    tags: [this.tags.java]
                 },
                 {
                     id: 5,
@@ -117,6 +151,7 @@
                         source: this.github,
                         url: "https://github.com/wziel/Wzielin3.Private.OlimpiadaInformatyczna"
                     }],
+                    tags: [this.tags.algorithms, this.tags.cpp]
                 },
                 {
                     id: 6,
@@ -134,6 +169,7 @@
                         source: this.github,
                         url: "https://github.com/wziel/Wzielin3.Private.MionWebSite"
                     }],
+                    tags: [this.tags.angularjs, this.tags.bootstrap, this.tags.css, this.tags.html, this.tags.javascript, this.tags.typescript, this.tags.visualstudio]
                 },
             ];
         }

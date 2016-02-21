@@ -1,18 +1,30 @@
 ﻿<div class="container">
     <div class="row">
-        <div ng-repeat="project in projects" class="container well">
+        <div class="container well">
+            <button type="button" class="btn btn-default col-lg-2 col-sm-3 col-xs-6" ng-click="filterCollapsed = !filterCollapsed">
+                <span ng-show="filterCollapsed">Show filter</span>
+                <span ng-hide="filterCollapsed">Hide filter</span>
+            </button>
+            <div>
+                <div uib-collapse="filterCollapsed" ng-repeat="tag in tags" class="col-lg-2 col-sm-3 col-xs-6">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-click="includeTag(tag)" /> {{tag}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div ng-repeat="project in projects | filter:tagFilter" class="container well">
             <h3>{{project.title}}</h3>
             <img src="{{project.images.main}}" alt="{{project.title}}" class="col-md-4 col-xs-12" style="padding-left:0px" />
-            <div class="col-md-8 col-xs-12" style="padding-left:0">
-                <div class="hidden-xs hidden-sm">
-                    <span>{{project.description | limitTo: 900}}</span>
-                    <span ng-show="project.description.length > 900">...</span>
-                </div>
-                <div class="hidden-lg hidden-md hidden-print">
-                    <span>{{project.description | limitTo: 200}}...</span>
-                    <span ng-show="project.description.length > 200">...</span>
-                </div>
+            <div class="col-md-8 col-xs-12">
+                <span class="hidden-xs hidden-sm">{{project.description | limitTo: 800}}</span>
+                <span class="hidden-lg hidden-md hidden-print">{{project.description | limitTo: 200}}</span>
                 <div><a href="{{project.path}}">See more...</a></div>
+            </div>
+            <div class="well-sm col-xs-12">
+                <span ng-repeat="tag in project.tags" style="font-size: 20px">
+                    {{tag}}{{$last ? '' : ', '}}
+                </span>
             </div>
         </div>
     </div>

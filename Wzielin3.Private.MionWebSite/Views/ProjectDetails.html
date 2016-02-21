@@ -16,7 +16,11 @@
                 {{link.source.displayText}}
             </a>
         </div>
-
+    </div>
+    <div class="well-sm col-xs-12">
+        <span ng-repeat="tag in project.tags" style="font-size: 20px">
+            {{tag}}{{$last ? '' : ', '}}
+        </span>
     </div>
 
 </div>

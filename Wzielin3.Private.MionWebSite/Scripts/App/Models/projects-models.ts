@@ -10,6 +10,7 @@ module App.Models.Projects {
             getAll(): string[];
         };
         externalLinks: ExternalLink[];
+        tags: string[];
     }
 
     export class ExternalLink {
