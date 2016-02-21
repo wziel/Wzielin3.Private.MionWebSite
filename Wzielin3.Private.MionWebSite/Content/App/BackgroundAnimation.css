@@ -29,7 +29,7 @@
 }
 
 .well, .jumbotron {
-    background: rgba(230, 230, 230, 0.9);
+    /*background: rgba(230, 230, 230, 0.9);*/
 }
 
 @-moz-keyframes cloudAnimation {
